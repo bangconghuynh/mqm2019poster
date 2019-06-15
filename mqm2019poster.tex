@@ -1,5 +1,5 @@
+% !TeX document-id = {3ec03efe-bd26-4a88-995a-24dc71ddaacf}
 % !TeX program = lualatex
-% !BIB program = biber
 
 % Gemini theme
 % https://github.com/anishathalye/gemini
@@ -12,7 +12,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[size=custom,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[orientation=portrait, size=a0, scale=1.4]{beamerposter}
 \usetheme{BCHCambridge}
 \usecolortheme{BCHCambridge}
 \usepackage{graphicx}
@@ -28,8 +28,8 @@
 % (N+1)*\sepwidth + N*\colwidth = \paperwidth
 \newlength{\sepwidth}
 \newlength{\colwidth}
-\setlength{\sepwidth}{0.025\paperwidth}
-\setlength{\colwidth}{0.3\paperwidth}
+\setlength{\sepwidth}{0.03\paperwidth}
+\setlength{\colwidth}{0.455\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
 
@@ -37,11 +37,11 @@
 % Title
 % ====================
 
-\title{Some fancy title: followed by some more text}
+\title{Symmetry in Multiple SCF Solutions of Transition\textendash Metal Complexes}
 
-\author{Alyssa P. Hacker \inst{1} \and Ben Bitdiddle \inst{2} \and Lem E. Tweakit \inst{2}}
+\author{Bang C. Huynh\textsuperscript{$\dagger$} \inst{1} \and Alex J. W. Thom \inst{1}}
 
-\institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
+\institute[shortinst]{\inst{1} University of Cambridge}
 
 % ====================
 % Body
@@ -121,97 +121,97 @@
 
 \separatorcolumn
 
-\begin{column}{\colwidth}
-
-  \begin{block}{A block containing an enumerated list}
-
-    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
-
-    \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
-    \end{enumerate}
-
-  \end{block}
-
-  \begin{block}{Fusce aliquam magna velit}
-
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
-
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-            scale only axis,
-            no markers,
-            domain=0:2*pi,
-            samples=100,
-            axis lines=center,
-            axis line style={-},
-            ticks=none]
-          \addplot[red] {sin(deg(x))};
-          \addplot[blue] {cos(deg(x))};
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Another figure caption.}
-    \end{figure}
-
-  \end{block}
-
-  \begin{block}{Nam cursus consequat egestas}
-
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
-
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
-
-    \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
-    \end{itemize}
-
-  \end{block}
-
-\end{column}
-
-\separatorcolumn
+%\begin{column}{\colwidth}
+%
+%  \begin{block}{A block containing an enumerated list}
+%
+%    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
+%    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
+%    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
+%    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
+%    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
+%    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
+%    commodo in metus.
+%
+%    \begin{enumerate}
+%      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
+%        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
+%        montes, nascetur ridiculus mus.
+%      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
+%        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
+%        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
+%      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
+%        nulla accumsan, non rhoncus lectus condimentum.
+%    \end{enumerate}
+%
+%  \end{block}
+%
+%  \begin{block}{Fusce aliquam magna velit}
+%
+%    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
+%    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
+%    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
+%    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
+%    posuere.
+%
+%    \begin{figure}
+%      \centering
+%      \begin{tikzpicture}
+%        \begin{axis}[
+%            scale only axis,
+%            no markers,
+%            domain=0:2*pi,
+%            samples=100,
+%            axis lines=center,
+%            axis line style={-},
+%            ticks=none]
+%          \addplot[red] {sin(deg(x))};
+%          \addplot[blue] {cos(deg(x))};
+%        \end{axis}
+%      \end{tikzpicture}
+%      \caption{Another figure caption.}
+%    \end{figure}
+%
+%  \end{block}
+%
+%  \begin{block}{Nam cursus consequat egestas}
+%
+%    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
+%    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
+%    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
+%    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
+%    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
+%    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
+%    sit amet sollicitudin risus tincidunt non.
+%
+%    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
+%    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
+%    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
+%    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
+%
+%    \begin{itemize}
+%      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
+%        sed est scelerisque, elementum mollis augue iaculis.
+%        \begin{itemize}
+%          \item In sed est finibus, vulputate
+%            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
+%            porttitor quis.
+%          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
+%            tempor tincidunt eu a arcu.
+%          \item Donec rhoncus vestibulum erat, quis aliquam leo
+%            gravida egestas.
+%        \end{itemize}
+%      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
+%        faucibus purus, sed lobortis justo erat id turpis.
+%      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
+%        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
+%    \end{itemize}
+%
+%  \end{block}
+%
+%\end{column}
+%
+%\separatorcolumn
 
 \begin{column}{\colwidth}
 
