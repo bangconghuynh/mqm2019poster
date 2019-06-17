@@ -14,8 +14,8 @@
 % Fonts
 % ====================
 
-\newfontfamily\Raleway{Raleway}
-\newfontfamily\Lato{Lato}
+\newfontfamily\Raleway{Raleway}[Ligatures=TeX]
+\newfontfamily\Lato{Lato}[Ligatures=TeX]
 
 \usefonttheme{professionalfonts}
 
@@ -23,11 +23,12 @@
     UprightFont=*-Light,
     ItalicFont=*-LightItalic,
     BoldFont=*-Regular,
-    BoldItalicFont=*-Italic
+    BoldItalicFont=*-Italic,
+    Ligatures=TeX
 ]
 
 \setbeamerfont{headline}{family=\Raleway}
-\setbeamerfont{headline title}{size=\Huge,series=\bfseries}
+\setbeamerfont{headline title}{size=\huge,series=\bfseries}
 \setbeamerfont{headline author}{size=\Large}
 \setbeamerfont{headline institute}{size=\normalsize}
 \setbeamerfont{footline}{family=\Raleway}
@@ -97,7 +98,7 @@
 {
     \begin{beamercolorbox}{headline}
         \begin{columns}
-			\begin{column}{0.03\paperwidth}
+			\begin{column}{0.02\paperwidth}
 			\end{column}
             \begin{column}{0.75\paperwidth}
                 \usebeamerfont{headline}
@@ -107,6 +108,8 @@
                 {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[1ex]}
                 {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
             \end{column}
+        	\begin{column}{0.02\paperwidth}
+        	\end{column}
         	\begin{column}{0.19\paperwidth}
         		\begin{center}
         			\vskip5ex
@@ -115,7 +118,7 @@
         			\includegraphics[width=\linewidth]{images/cam-trust-logo}
         		\end{center}
         	\end{column}
-        	\begin{column}{0.03\paperwidth}
+        	\begin{column}{0.02\paperwidth}
         	\end{column}
         \end{columns}
         \vspace{5ex}
