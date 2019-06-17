@@ -135,11 +135,23 @@
 	\separatorcolumn
 	
 	\begin{column}{\dimexpr(2\colwidth+\sepwidth)}
-		\begin{block}{Low-Energy UHF Solutions in \ce{[VF6]^{3-}}}
+		\begin{block}{Low-Lying UHF Solutions and NOCI Wavefunctions in Model Octahedral \ce{[VF6]^{3-}}}
 			\begin{figure}
-				\centering
-				\useexternalfile{d2_MS1_nonoci}
-				\caption{A figure caption.}
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\useexternalfile{d2_MS1_allnoci}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\useexternalfile{d2_MS0_allnoci}
+				\end{subfigure}
+				\captionsetup{justification=centering}
+				\caption{
+					Energy and symmetry of low-lying UHF solutions and NOCI wavefunctions constructed from them in octahedral \ce{[VF6]^3-}.\\[6pt]
+					\tikz[baseline]{\node[draw, Gray, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: symmetry-conserved solution $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$. \tikz[baseline]{\node[draw, Gray, densely dotted, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: spatial or spin symmetry-broken solution $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$.\\[6pt]
+					$\Gamma[\mathrm{A}\oplus\mathrm{B}\oplus\mathrm{C}]$: a specific NOCI set of symmetry $\Gamma$ constructed from all of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$. $\Gamma[\mathrm{A}, \mathrm{B}, \mathrm{C}]$: multiple NOCI sets of symmetry $\Gamma$ constructed from all non-trivial combinations of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$.
+				}
 			\end{figure}
 		\end{block}
 	\end{column}
@@ -156,15 +168,15 @@
 
     Some block contents, followed by a diagram, followed by a dummy paragraph.
 
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
-    \end{figure}
+%    \begin{figure}
+%      \centering
+%      \begin{tikzpicture}[scale=6]
+%        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
+%        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
+%          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
+%      \end{tikzpicture}
+%      \caption{A figure caption.}
+%    \end{figure}
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
     eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum

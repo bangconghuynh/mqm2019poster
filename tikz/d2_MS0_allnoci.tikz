@@ -1,0 +1,219 @@
+\begin{tikzpicture}[%
+	baseline,%
+%	trim axis left,%
+%	trim axis right,%
+]
+	\begin{axis}[
+		%% General %%%%%%%%%%%%%%%%%%
+		height = 27.5cm,
+		width = 6.0cm,
+		xcomb,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Title format %%%%%%%%%%%%%
+		align = center,
+		title = {$M_S = 0$},
+		title style = {yshift = -.5ex, font = {\small}},
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Axis format %%%%%%%%%%%%%%
+		% Axis scales
+		scaled x ticks = false,
+		xmin = 0, xmax = 6,
+		ymin = -1539.351, ymax = -1539.199,
+		restrict y to domain=-1539.351:-1539.199,
+		% Axis labels
+		xlabel = {Spatial \& time-reversal degeneracy},
+		ylabel = {Energy / $\si{\hartree}$},
+		label style = {font = \small},
+		tick label style = {font = \small},
+%		xticklabels={,,},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision=2,
+			/tikz/.cd
+		},
+		% Axis ticks
+		xtick pos = left,
+		xtick align = outside,
+		ytick align = outside,
+		ytick pos = left,
+		ytick distance = 0.02,
+		minor x tick num = 1,
+		minor y tick num = 1,
+		xtick distance = 2,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Legend format %%%%%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Annotations %%%%%%%%%%%%%%
+		after end axis/.code = {
+			%%
+			%% UHF
+			% A continuation
+			\draw[Blue, densely dotted, thin] (axis cs:6.0,-1539.30861549569022) -- (axis cs:6.5,-1539.30861549569022);
+			\draw[Blue, thin] (axis cs:6.5,-1539.30861549569022) -- (axis cs:9.0,-1539.30861549569022);
+			% A
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (A) at (axis cs:10,-1539.32) {\scriptsize $\mathrm{A}_0$};
+			\draw[gray, densely dotted, thin] (axis cs:9.1,-1539.30861549569022) -- ($(A.north west)$);
+			\node[gray, anchor = west, inner sep = 3pt, align = left] (Asym) at ($(A.west) + (1.7cm,0)$) {\scriptsize $A_{1g} \oplus A_{2g} \oplus 2E_{g}$ \\[-1ex] \scriptsize $\oplus\ 3T_{1g} \oplus 3T_{2g}$};
+			\draw[->, gray, thin, densely dotted] (A) -- (Asym);
+			% Adash continuation
+			\draw[Blue, densely dotted, thin] (axis cs:6.0,-1539.3080469) -- (axis cs:6.5,-1539.3080469);
+			\draw[Blue, thin] (axis cs:6.5,-1539.3080469) -- (axis cs:7.5,-1539.3080469);
+			% Adash
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (Adash) at (axis cs:10,-1539.306) {\scriptsize $\mathrm{A}'_0$};
+			\draw[gray, densely dotted, thin] (axis cs:7.6,-1539.3080469) -- (Adash);
+			\node[gray, anchor = west, inner sep = 3pt] (Adashsym) at ($(Adash.west) + (1.7cm,0)$) {\scriptsize $2T_{1g} \oplus 2T_{2g}$};
+			\draw[->, gray, thin, densely dotted] (Adash) -- (Adashsym);
+			% A Adash continuation auxiliary axis
+			\draw[thin, densely dotted] (axis cs:6.0,-1539.312) -- (axis cs:6.5,-1539.312);
+			\draw[thin] (axis cs:6.5,-1539.312) -- (axis cs:9,-1539.312);
+			\draw[thin] (axis cs:7.5,-1539.312) -- (axis cs:7.5,-1539.313);
+			\draw[thin] (axis cs:9,-1539.312) -- (axis cs:9,-1539.313);
+			\node[anchor = north, inner sep = 1pt] at (axis cs:7.5,-1539.313) {\tiny $12$};
+			\node[anchor = north, inner sep = 1pt] at (axis cs:9,-1539.313) {\tiny $24$};
+			% Addash
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (Addash) at (axis cs:7,-1539.30) {\scriptsize $\mathrm{A}''_0$};
+			\draw[gray, densely dotted, thin] (axis cs:6.1,-1539.3062026) -- (Addash);
+			\node[gray, anchor = west, inner sep = 3pt, align = center] (Addashsym) at ($(Addash.west) + (1.7cm,0)$) {\scriptsize $T_{1g} \oplus T_{2g}$};
+			\draw[->, gray, thin, densely dotted] (Addash) -- (Addashsym);
+			% B
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (B) at (axis cs:7,-1539.26) {\scriptsize $\mathrm{B}_0$};
+			\draw[gray, densely dotted, thin] (axis cs:6.1,-1539.2659974) -- (B);
+			\node[gray, anchor = west, inner sep = 3pt] (Bsym) at ($(B.west) + (1.7cm,0)$) {\scriptsize $A_{1g} \oplus E_{g} \oplus T_{2g}$};
+			\draw[->, gray, thin, densely dotted] (B) -- (Bsym);
+			% C
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (C) at (axis cs:7,-1539.25) {\scriptsize $\mathrm{C}_0$};
+			\draw[gray, densely dotted, thin] (axis cs:6.1,-1539.2528868) -- (C);
+			\node[gray, anchor = west, inner sep = 3pt] (Csym) at ($(C.west) + (1.7cm,0)$) {\scriptsize $2T_{2g}$};
+			\draw[->, gray, thin, densely dotted] (C) -- (Csym);
+			% D
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (D) at (axis cs:7,-1539.24) {\scriptsize $\mathrm{D}_0$};
+			\draw[gray, densely dotted, thin] (axis cs:6.1,-1539.2440258) -- (D);
+			\node[gray, anchor = west, inner sep = 3pt] (Dsym) at ($(D.west) + (1.7cm,0)$) {\scriptsize $A_{1g} \oplus E_g$};
+			\draw[->, gray, thin, densely dotted] (D) -- (Dsym);
+			% E
+			\node[draw, gray, densely dotted, anchor = west, inner sep = 3pt] (E) at (axis cs:7,-1539.225) {\scriptsize $\mathrm{E}_0$};
+			\draw[gray, densely dotted, thin] (axis cs:6.1,-1539.2204473) -- (E);
+			\node[gray, anchor = west, inner sep = 3pt] (Esym) at ($(E.west) + (1.7cm,0)$) {\scriptsize $2T_{1g}$};
+			\draw[->, gray, thin, densely dotted] (E) -- (Esym);
+			%%
+			%% UHF orbitals
+			% A orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Aorb) at (axis cs:21,-1539.343) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Asym.east)$) .. controls ($(Asym.east) + (1cm,0cm)$) and ($(Aorb.west) + (-1cm,0cm)$) .. (Aorb);
+			% Adash orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Adashorb) at (axis cs:21,-1539.324) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Adashsym.east)$) .. controls ($(Adashsym.east) + (1cm,0cm)$) and ($(Adashorb.west) + (-1cm,0cm)$) .. (Adashorb);
+			% Addash orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Addashorb) at (axis cs:21,-1539.297) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Addashsym.east)$) .. controls ($(Addashsym.east) + (1cm,0cm)$) and ($(Addashorb.west) + (-1cm,0cm)$) .. (Addashorb);
+			% B orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Borb) at (axis cs:21,-1539.275) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Bsym.east)$) .. controls ($(Bsym.east) + (1cm,0cm)$) and ($(Borb.west) + (-1cm,0cm)$) .. (Borb);
+			% C orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Corb) at (axis cs:21,-1539.255) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Csym.east)$) .. controls ($(Csym.east) + (1cm,0cm)$) and ($(Corb.west) + (-1cm,0cm)$) .. (Corb);
+			% D orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Dorb) at (axis cs:21,-1539.235) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Dsym.east)$) .. controls ($(Dsym.east) + (1cm,0cm)$) and ($(Dorb.west) + (-1cm,0cm)$) .. (Dorb);
+			% E orbitals
+			\node[draw, Blue, densely dotted, thick, anchor = west, inner sep=1pt] (Eorb) at (axis cs:21,-1539.215) {\includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_40_1200ppi} \  \includegraphics[width=.06\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_80_1200ppi}};
+			\draw[->, Gray, shorten >=0.1cm, densely dotted] ($(Esym.east)$) .. controls ($(Esym.east) + (1cm,0cm)$) and ($(Eorb.west) + (-1cm,0cm)$) .. (Eorb);
+			%%
+			%% NOCI
+			%% Triplets
+			%%
+			% 3T1g[A,Adash,Addash]
+			\node[anchor = west, inner sep = 3pt] (3T1gAAdashAddash) at (axis cs:7,-1539.353) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{A}_0, \mathrm{A}'_0, \mathrm{A}''_0]$};
+			% 3T1g[A]
+			\draw[thin, ->] (axis cs:3.1,-1539.3445628) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[Adash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3433740) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3372071) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[A+Adash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3448695) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[A+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3447589) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[Adash+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3434856) -- ($(3T1gAAdashAddash.north west)$);
+			% 3T1g[A+Adash+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.3448808) -- ($(3T1gAAdashAddash.north west)$);
+			%%
+			% 3T2g[B,C]
+			\node[anchor = west, inner sep = 3pt] (3T2gBC) at (axis cs:7,-1539.293) {\scriptsize $\prescript{3}{}{T}_{2g}[\mathrm{B}_0, \mathrm{C}_0]$};
+			% 3T2g[B]
+			\draw[thin, ->] (axis cs:3.1,-1539.2847593) -- ($(3T2gBC.north west)$);
+			% 3T2g[C]
+			\draw[thin, ->] (axis cs:3.1,-1539.2868717) -- ($(3T2gBC.north west)$);
+			% 3T2g[B+C]
+			\draw[thin, ->] (axis cs:3.1,-1539.2890629) -- ($(3T2gBC.north west)$);
+			%%
+			% 3T1g[E]
+			\node[anchor = west, inner sep = 3pt] (3T1gE) at (axis cs:7,-1539.232) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{E}_0]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2374281) -- ($(3T1gE.west)$);
+			%%
+			%%
+			%% Singlets
+			% 1T2g[A,Adash,Addash]
+			\node[anchor = west, inner sep = 3pt] (1T2gAAdashAddash) at (axis cs:7,-1539.286) {\scriptsize $\prescript{1}{}{T}_{2g}[\mathrm{A}_0, \mathrm{A}'_0, \mathrm{A}''_0]$};
+			% 1T2g[A]
+			\draw[thin, ->] (axis cs:3.1,-1539.2803723) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[Adash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2791715) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2751980) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[A+Adash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2803724) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[A+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2804345) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[Adash+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2792889) -- ($(1T2gAAdashAddash.north west)$);
+			% 1T2g[A+Adash+Addash]
+			\draw[thin, ->] (axis cs:3.1,-1539.2804618) -- ($(1T2gAAdashAddash.north west)$);
+			%%
+			% 1Eg[A,B,D]
+			\node[anchor = west, inner sep = 3pt] (1EgABD) at (axis cs:7,-1539.27) {\scriptsize $\prescript{1}{}{E}_{g}[\mathrm{A}_0, \mathrm{B}_0, \mathrm{D}_0]$};
+			% 1Eg[A]
+			\draw[thin, ->] (axis cs:2.1,-1539.2770923) -- ($(1EgABD.west)$);
+			% 1Eg[B]
+			\draw[thin, ->] (axis cs:2.1,-1539.2735656) -- ($(1EgABD.west)$);
+			% 1Eg[D]
+			\draw[thin, ->] (axis cs:2.1,-1539.2742054) -- ($(1EgABD.west)$);
+			% 1Eg[B+D]
+			\draw[thin, ->] (axis cs:2.1,-1539.2781317) -- ($(1EgABD.west)$);
+			% 1Eg[A+D]
+			\draw[thin, ->] (axis cs:2.1,-1539.2785202) -- ($(1EgABD.west)$);
+			% 1Eg[A+B]
+			\draw[thin, ->] (axis cs:2.1,-1539.2816837) -- ($(1EgABD.west)$);
+			%%
+			% 1T2g[C]
+			\node[anchor = west, inner sep = 3pt] (1T2gC) at (axis cs:7,-1539.216) {\scriptsize $\prescript{1}{}{T}_{2g}[\mathrm{C}_0]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2189019) -- ($(1T2gC.west)$);
+			%%
+			% 1T1g[E]
+			\node[anchor = west, inner sep = 3pt] (1T1gE) at (axis cs:7,-1539.207) {\scriptsize $\prescript{1}{}{T}_{1g}[\mathrm{E}_0]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2034665) -- ($(1T1gE.west)$);
+		},
+	]
+		\addplot+[
+			mark = none,
+			Blue,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.dos.csv};
+		\addplot+[
+			mark = none,
+			DarkCyan,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.allnocitriplet.dos.csv};
+		\addplot+[
+			mark = none,
+			Magenta,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.allnocisinglet.dos.csv};
+	\end{axis}
+\end{tikzpicture}

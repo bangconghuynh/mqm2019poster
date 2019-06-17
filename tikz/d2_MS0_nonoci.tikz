@@ -1,0 +1,91 @@
+\begin{tikzpicture}[%
+	trim axis left,%
+	trim axis right,%
+]
+	\begin{axis}[
+		%% General %%%%%%%%%%%%%%%%%%
+		height = 13cm,
+		width = 4.4cm,
+		xcomb,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Title format %%%%%%%%%%%%%
+		align = center,
+		title = {$M_S = 0$},
+		title style = {yshift = -1ex, font = {\small}},
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Axis format %%%%%%%%%%%%%%
+		% Axis scales
+		scaled x ticks = false,
+		xmin = 0, xmax = 24,
+		ymin = -1539.351, ymax = -1539.199,
+		restrict y to domain=-1539.351:-1539.199,
+		% Axis labels
+		xlabel = {Spatial \& time-reversal degeneracy},
+		label style = {font = \small},
+		tick label style = {font = \small},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision=2,
+			/tikz/.cd
+		},
+		% Axis ticks
+		xtick pos = left,
+		xtick align = outside,
+		ytick align = outside,
+		ytick pos = left,
+		ytick distance = 0.02,
+		minor x tick num = 1,
+		minor y tick num = 1,
+		xtick distance = 6,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Legend format %%%%%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Annotations %%%%%%%%%%%%%%
+		after end axis/.code = {
+			% A
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (A) at (axis cs:27,-1539.32) {\footnotesize $\mathrm{A}_0$};
+			\draw[densely dotted, thin] (axis cs:24.3,-1539.30861549569022) -- ($(A.north west)$);
+			\node[anchor = west, inner sep = 3pt, align = left] (Asym) at ($(A.west) + (0.9cm,0)$) {\footnotesize $A_{1g} \oplus A_{2g} \oplus 2E_{g}$ \\ \footnotesize $\oplus\ 3T_{1g} \oplus 3T_{2g}$};
+			\draw[->, thin, densely dotted] (A) -- (Asym);
+			% Adash
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (Adash) at (axis cs:27,-1539.30) {\footnotesize $\mathrm{A}'_0$};
+			\draw[densely dotted, thin] (axis cs:12.3,-1539.3080469) -- (Adash);
+			\node[anchor = west, inner sep = 3pt] (Adashsym) at ($(Adash.west) + (0.9cm,0)$) {\footnotesize $2T_{1g} \oplus 2T_{2g}$};
+			\draw[->, thin, densely dotted] (Adash) -- (Adashsym);
+			% Addash
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (Addash) at (axis cs:27,-1539.287) {\footnotesize $\mathrm{A}''_0$};
+			\draw[densely dotted, thin] (axis cs:6.3,-1539.3062026) -- (Addash);
+			\node[anchor = west, inner sep = 3pt, align = center] (Addashsym) at ($(Addash.west) + (0.9cm,0)$) {\footnotesize $T_{1g} \oplus T_{2g}$};
+			\draw[->, thin, densely dotted] (Addash) -- (Addashsym);
+			% B
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (B) at (axis cs:27,-1539.273) {\footnotesize $\mathrm{B}_0$};
+			\draw[densely dotted, thin] (axis cs:6.3,-1539.2659974) -- (B);
+			\node[anchor = west, inner sep = 3pt] (Bsym) at ($(B.west) + (0.9cm,0)$) {\footnotesize $A_{1g} \oplus E_{g} \oplus T_{2g}$};
+			\draw[->, thin, densely dotted] (B) -- (Bsym);
+			% C
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (C) at (axis cs:27,-1539.26) {\footnotesize $\mathrm{C}_0$};
+			\draw[densely dotted, thin] (axis cs:6.3,-1539.2528868) -- (C);
+			\node[anchor = west, inner sep = 3pt] (Csym) at ($(C.west) + (0.9cm,0)$) {\footnotesize $2T_{2g}$};
+			\draw[->, thin, densely dotted] (C) -- (Csym);
+			% D
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (D) at (axis cs:27,-1539.238) {\footnotesize $\mathrm{D}_0$};
+			\draw[densely dotted, thin] (axis cs:6.3,-1539.2440258) -- (D);
+			\node[anchor = west, inner sep = 3pt] (Dsym) at ($(D.west) + (0.9cm,0)$) {\footnotesize $A_{1g} \oplus E_g$};
+			\draw[->, thin, densely dotted] (D) -- (Dsym);
+			% E
+			\node[draw, densely dotted, anchor = west, inner sep = 3pt] (E) at (axis cs:27,-1539.225) {\footnotesize $\mathrm{E}_0$};
+			\draw[densely dotted, thin] (axis cs:6.3,-1539.2204473) -- (E);
+			\node[anchor = west, inner sep = 3pt] (Esym) at ($(E.west) + (0.9cm,0)$) {\footnotesize $2T_{1g}$};
+			\draw[->, thin, densely dotted] (E) -- (Esym);
+		},
+	]
+		\addplot+[
+			mark = none,
+			blue,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{results-d2/plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.dos.csv};
+	\end{axis}
+\end{tikzpicture}
