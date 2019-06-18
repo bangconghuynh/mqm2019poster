@@ -58,7 +58,7 @@
 			},	
 			]
 			\addplot[
-			Green!40!Black,
+			Green!80!Black,
 			domain=-5e-3:15e-3,
 			samples=201,
 			thick,

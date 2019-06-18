@@ -1,0 +1,183 @@
+\begin{tikzpicture}
+	\node[] (d2corr) at (0,0) {%
+		\begin{tikzpicture}[baseline={($(3T1t2)$)}]
+			% Free ion
+			\node (3F) at (-3,0) {};
+			\draw[very thick] ($(3F) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{F}$};
+			\node (1D) at (-3,2.5) {};
+			\draw[very thick] ($(1D) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{D}$};
+			\node (3P) at (-3,4) {};
+			\draw[very thick] ($(3P) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{P}$};
+			\node (1G) at (-3,6) {};
+			\draw[very thick] ($(1G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{G}$};
+			\node (1S) at (-3,8.5) {};
+			\draw[very thick] ($(1S) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{S}$};
+			%%%
+			% Weak field
+			% 3F
+			\node (3T13F) at ($(3F) + (1.6,-0.7)$) {};
+			\draw[very thick] ($(3T13F) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_1$};
+			\node (3T23F) at ($(3F) + (1.6,0.2)$) {};
+			\draw[very thick] ($(3T23F) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_2$};
+			\node (3A23F) at ($(3F) + (1.6,1.0)$) {};
+			\draw[very thick] ($(3A23F) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{A}_2$};
+			\draw[dashed, thin] ($(3F) + (0.4,0)$) -- ($(3T13F) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3F) + (0.4,0)$) -- ($(3T23F) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3F) + (0.4,0)$) -- ($(3A23F) + (-0.4,0)$);
+			% 1D
+			\node (1T21D) at ($(1D) + (1.6,-0.3)$) {};
+			\draw[very thick] ($(1T21D) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_2$};
+			\node (1E1D) at ($(1D) + (1.6,0.5)$) {};
+			\draw[very thick] ($(1E1D) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{E}$};
+			\draw[dashed, thin] ($(1D) + (0.4,0)$) -- ($(1T21D) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1D) + (0.4,0)$) -- ($(1E1D) + (-0.4,0)$);
+			% 3P
+			\node (3T13P) at ($(3P) + (1.6,0)$) {};
+			\draw[very thick] ($(3T13P) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_1$};
+			\draw[dashed, thin] ($(3P) + (0.4,0)$) -- ($(3T13P) + (-0.4,0)$);
+			% 1G
+			\node (1T11G) at ($(1G) + (1.6,-1)$) {};
+			\draw[very thick] ($(1T11G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_1$};
+			\node (1T21G) at ($(1G) + (1.6,-0.4)$) {};
+			\draw[very thick] ($(1T21G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_2$};
+			\node (1E1G) at ($(1G) + (1.6,0.6)$) {};
+			\draw[very thick] ($(1E1G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{E}$};
+			\node (1A11G) at ($(1G) + (1.6,1.4)$) {};
+			\draw[very thick] ($(1A11G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{A}_1$};
+			\draw[dashed, thin] ($(1G) + (0.4,0)$) -- ($(1T11G) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1G) + (0.4,0)$) -- ($(1T21G) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1G) + (0.4,0)$) -- ($(1E1G) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1G) + (0.4,0)$) -- ($(1A11G) + (-0.4,0)$);
+			% 1S
+			\node (1A11S) at ($(1S) + (1.6,0)$) {};
+			\draw[very thick] ($(1A11S) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{A}_1$};
+			\draw[dashed, thin] ($(1S) + (0.4,0)$) -- ($(1A11S) + (-0.4,0)$);
+			%%%
+			% Strong field
+			% t2
+			\node (3T1t2) at ($(3T13F) + (2.5,-3)$) {};
+			\draw[very thick] ($(3T1t2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_1$};
+			\node (1T2t2) at ($(3T13F) + (2.5,-2.1)$) {};
+			\draw[very thick] ($(1T2t2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_2$};
+			\node (1Et2) at ($(3T13F) + (2.5,-1.2)$) {};
+			\draw[very thick] ($(1Et2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{E}$};
+			\node (1A1t2) at ($(3T13F) + (2.5,-0.3)$) {};
+			\draw[very thick] ($(1A1t2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{A}_1$};
+			\node (t2) at ($(3T13F) + (4.0,-2.3)$) {};
+			\draw[very thick] ($(t2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 1pt] {\footnotesize $t^2_2$};
+			\draw[dashed, thin] ($(3T13F) + (0.4,0)$) -- ($(3T1t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T21D) + (0.4,0)$) -- ($(1T2t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1E1D) + (0.4,0)$) -- ($(1Et2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1A11G) + (0.4,0)$) -- ($(1A1t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3T1t2) + (0.4,0)$) -- ($(t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T2t2) + (0.4,0)$) -- ($(t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1Et2) + (0.4,0)$) -- ($(t2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1A1t2) + (0.4,0)$) -- ($(t2) + (-0.4,0)$);
+			% t1e1
+			\node (3T1t1e1) at ($(3T13F) + (2.5,1.2)$) {};
+			\draw[very thick] ($(3T1t1e1) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_1$};
+			\node (3T2t1e1) at ($(3T13F) + (2.5,2.1)$) {};
+			\draw[very thick] ($(3T2t1e1) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{T}_2$};
+			\node (1T1t1e1) at ($(3T13F) + (2.5,3)$) {};
+			\draw[very thick] ($(1T1t1e1) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_1$};
+			\node (1T2t1e1) at ($(3T13F) + (2.5,3.9)$) {};
+			\draw[very thick] ($(1T2t1e1) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{T}_2$};
+			\node (t1e1) at ($(3T13F) + (4.0,1.9)$) {};
+			\draw[very thick] ($(t1e1) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 1pt] {\footnotesize $t_2^1 e^1$};
+			\draw[dashed, thin] ($(3T13P) + (0.4,0)$) -- ($(3T1t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3T23F) + (0.4,0)$) -- ($(3T2t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T11G) + (0.4,0)$) -- ($(1T1t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T21G) + (0.4,0)$) -- ($(1T2t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3T1t1e1) + (0.4,0)$) -- ($(t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3T2t1e1) + (0.4,0)$) -- ($(t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T1t1e1) + (0.4,0)$) -- ($(t1e1) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1T2t1e1) + (0.4,0)$) -- ($(t1e1) + (-0.4,0)$);
+			% e2
+			\node (3A2e2) at ($(3T13F) + (2.5,5.5)$) {};
+			\draw[very thick] ($(3A2e2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{3}{}{A}_2$};
+			\node (1Ee2) at ($(3T13F) + (2.5,6.4)$) {};
+			\draw[very thick] ($(1Ee2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{E}$};
+			\node (1A1e2) at ($(3T13F) + (2.5,7.3)$) {};
+			\draw[very thick] ($(1A1e2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\footnotesize $\prescript{1}{}{A}_1$};
+			\node (e2) at ($(3T13F) + (4.0,6.4)$) {};
+			\draw[very thick] ($(e2) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 1pt] {\footnotesize $e^2$};
+			\draw[dashed, thin] ($(3A23F) + (0.4,0)$) -- ($(3A2e2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1E1G) + (0.4,0)$) -- ($(1Ee2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1A11S) + (0.4,0)$) -- ($(1A1e2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(3A2e2) + (0.4,0)$) -- ($(e2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1Ee2) + (0.4,0)$) -- ($(e2) + (-0.4,0)$);
+			\draw[dashed, thin] ($(1A1e2) + (0.4,0)$) -- ($(e2) + (-0.4,0)$);
+			%%%
+			% Labelling
+			\node (freeion) at ($(3T13F) + (-1.8,-3.5)$) {\small Free ion};
+			\node at ($(3T13F) + (0,-3.5)$) {\small Weak field};
+			\node at ($(3T13F) + (2.5,-3.53)$) {\small Strong field};
+			%%%
+			% Subcaption
+			%		\node[text width = .05\textwidth, align = center, anchor = north, inner sep=0pt] (fig:d2corr) at ($(3T1t2 -| current bounding box.south) + (0,-2.5em)$) {\subcaption[a]{} \label{fig:d2corr}};
+		\end{tikzpicture}
+	};
+%	\node[text width = .05\textwidth, align = center, anchor = north, inner sep=0pt] (fig:d2corr) at ($(d2corr.south) + (0,-1em)$) {\subcaption[a]{} \label{fig:d2corr}};
+	\node[anchor=west] (d2TS) at ($(d2corr.east) + (1em,0)$) {
+		\pgfplotstableread{plots/TSdiag/TSd2.csv}\TSdtwo
+		%	 Tanabe--Sugano
+		\begin{tikzpicture}[baseline]
+			\begin{axis}[
+			%% Size %%%%%%%%%%%%%%%%%%%%%
+			width = .475\textwidth,
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Title format %%%%%%%%%%%%%
+			%			title = {\small{B3-LYP}},
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Axis format %%%%%%%%%%%%%%
+			axis equal image,
+			xmin = 0, xmax = 20,
+			ymin = 0, ymax = 40,
+			xtick = {0},
+			ytick = \empty,
+			xlabel = {Splitting parameter, $\Delta_\mathrm{o}$},
+			ylabel = {Energy},
+			label style = {font = \small},
+			y label style = {yshift = 1.5em},
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Plot format %%%%%%%%%%%%%%
+			cycle list name = coloronly,
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Annotations %%%%%%%%%%%%%%
+			after end axis/.code = {
+				% Subcaption
+				%			\node[text width = .05\textwidth, align = center, anchor = north, inner sep=0pt] (fig:d2TS) at ($(current axis.south) + (0pt,-2.5em)$) {\subcaption[b]{} \label{fig:d2TS}};
+				% Labelling
+				\node[anchor = west] (3T1gF) at (axis cs:20.1,0) {\footnotesize $\prescript{3}{}{T_{1g}}$};
+				\node[anchor = west] (3T2gF) at (axis cs:20.1,18.301) {\footnotesize $\prescript{3}{}{T_{2g}}$};
+				\node[anchor = west] (3A2gF) at (axis cs:20.1,38.0) {\footnotesize $\prescript{3}{}{A_{2g}}$};
+				\node[anchor = west] (1T2gD) at (axis cs:20.1,14.5) {\footnotesize $\prescript{1}{}{T_{2g}}$};
+				\node[anchor = west] (1EgD) at (axis cs:20.1,16.2) {\footnotesize $\prescript{1}{}{E_{g}}$};
+				\node[anchor = west] (3T1gP) at (axis cs:20.1,31.0) {\footnotesize $\prescript{3}{}{T_{1g}}$};
+				\node[anchor = west] (1T2gG) at (axis cs:20.1,35.749) {\footnotesize $\prescript{1}{}{T_{2g}}$};
+				\node[anchor = south] (1EgG) at (axis cs:12.19,40.1) {\footnotesize $\prescript{1}{}{E_{g}}$};
+				\node[anchor = west] (1T1gG) at (axis cs:20.1,39.6) {\footnotesize $\prescript{1}{}{T_{1g}}$};
+				\node[anchor = west] (1A1gG) at (axis cs:20.1,32.7) {\footnotesize $\prescript{1}{}{A_{1g}}$};
+				\node[anchor = east] (3F) at (axis cs:-0.1,0) {\footnotesize $\prescript{3}{}{F}$};
+				\node[anchor = east] (1D) at (axis cs:-0.1,13.84) {\footnotesize $\prescript{1}{}{D}$};
+				\node[anchor = east] (3P) at (axis cs:-0.1,15) {\footnotesize $\prescript{3}{}{P}$};
+				\node[anchor = east] (1G) at (axis cs:-0.1,20.84) {\footnotesize $\prescript{1}{}{G}$};
+				\node[anchor = south] (freeion) at (axis cs:0,43.1) {\footnotesize Free ion};
+				\draw[->, thin] (freeion) -- (axis cs:0,40.3);
+				%		\node[anchor = south] (VF63-) at (axis cs:15.8,43.1) {\small \ce{[VF6]^{3-}}?};
+				%		\draw[->, thin] (VF63-) -- (axis cs:15.8,40.3);
+				%		\draw[dotted, thin] (axis cs:15.8,0) -- (axis cs:15.8,40.0);
+			},
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			]
+			\foreach \term in {3T1g(F), 3T2g(F), 3A2g(F), 3T1g(P)}{
+				\addplot+[thick, mark = none] table[x={delta/B}, y={\term}]{\TSdtwo};
+			}
+			\foreach \term in {1T2g(D), 1Eg(D), 1T2g(G), 1Eg(G), 1T1g(G), 1A1g(G), 1A1g(S)}{
+				\addplot+[thick, dashed, mark = none] table[x={delta/B}, y={\term}]{\TSdtwo};
+			}
+			\end{axis}
+		\end{tikzpicture}
+	};
+%	\node[anchor=north] (d2TSsubcaption) at ($(d2TS + (0,-2.5em)$) {\subcaption[b]{} \label{\subcaption[b]{} \label{fig:d2TS}}};
+\end{tikzpicture}

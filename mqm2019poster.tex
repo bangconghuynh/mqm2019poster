@@ -1,8 +1,6 @@
-% !TeX document-id = {3ec03efe-bd26-4a88-995a-24dc71ddaacf}
+% !TeX document-id = {e06c1009-e01a-4844-9da1-2c8789db7fce}
 % !TeX program = lualatex
-
-% Gemini theme
-% https://github.com/anishathalye/gemini
+% !TeX TXS-program:bibliography = txs:///biber
 
 \documentclass[final, xcolor={svgnames}]{beamer}
 
@@ -15,7 +13,7 @@
 
 \usepackage{lmodern}
 
-\usepackage[orientation=portrait, size=a0, scale=1.3]{beamerposter}
+\usepackage[orientation=portrait, size=a0, scale=1.2]{beamerposter}
 
 \usetheme{BCHCambridge}
 
@@ -34,6 +32,19 @@
 \usepackage{siunitx}
 
 
+% Micro-typography
+\usepackage[
+	activate={true,nocompatibility},%
+	final,%
+	tracking=true,%
+	factor=1100,%
+	stretch=10,%
+	shrink=10%
+]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40} % Reduce spacing between sc characters
+\microtypecontext{spacing=nonfrench}
+
+
 % Maths support
 \usepackage{amsmath, amssymb, mathtools, mathrsfs, braket, amsthm} % packages for further maths support
 
@@ -41,10 +52,28 @@
 \mleftright
 
 
+% Bibliography
+\usepackage[%
+	sorting=none,%
+	style=nature,%
+	articletitle=false,%
+	autocite=superscript,%
+	dateabbrev=false,%
+	url=false,%
+	isbn=false,%
+	backend=biber%
+]{biblatex}
+\addbibresource{bib/mqm2019poster.bib}
+
+
 % Tables
 \usepackage{booktabs, multirow, tabularx}
 
 \usepackage{lscape}
+
+
+% Cross-referencing
+\usepackage[capitalise, noabbrev]{cleveref} %loading package for enhanced cross-referencing; cleverref must be loaded after hyperref
 
 
 % Diagrams and captions
@@ -109,8 +138,8 @@
 % (N+1)*\sepwidth + N*\colwidth = \paperwidth
 \newlength{\sepwidth}
 \newlength{\colwidth}
-\setlength{\sepwidth}{0.03\paperwidth}
-\setlength{\colwidth}{0.455\paperwidth}
+\setlength{\sepwidth}{0.0275\paperwidth}
+\setlength{\colwidth}{0.45875\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
 
@@ -118,11 +147,11 @@
 % Title
 % ====================
 
-\title{Exploiting Multiple Symmetry-Broken SCF Solutions\newline to Describe Ground and Excited States of\newline Transition\textendash Metal Complexes}
+\title{Exploiting Multiple Symmetry-Broken SCF Solutions\\ to Describe Ground and Excited States of\\ Transition\textendash Metal Complexes}
 
 \author{Bang C. Huynh\inst{1} \and Alex J. W. Thom\inst{1}}
 
-\institute[shortinst]{\inst{1} Department of Chemistry, University of Cambridge, United Kingdom}
+\institute[Chemistry, Cambridge, UK]{\inst{1} Department of Chemistry, University of Cambridge, United Kingdom}
 
 % ====================
 % Body
@@ -135,7 +164,7 @@
 	\separatorcolumn
 	
 	\begin{column}{\dimexpr(2\colwidth+\sepwidth)}
-		\begin{block}{Low-Lying UHF Solutions and NOCI Wavefunctions in Model Octahedral \ce{[VF6]^{3-}}}
+		\begin{alertblock}{Low-Lying UHF Solutions and NOCI Wavefunctions of Model Octahedral \ce{[VF6]^{3-}}}
 			\begin{figure}
 				\begin{subfigure}[t]{0.49\textwidth}
 					\centering
@@ -149,11 +178,12 @@
 				\captionsetup{justification=centering}
 				\caption{
 					Energy and symmetry of low-lying UHF solutions and NOCI wavefunctions constructed from them in octahedral \ce{[VF6]^3-}.\\[6pt]
-					\tikz[baseline]{\node[draw, Gray, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: symmetry-conserved solution $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$. \tikz[baseline]{\node[draw, Gray, densely dotted, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: spatial or spin symmetry-broken solution $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$.\\[6pt]
+					\tikz[baseline]{\node[draw, Gray!60!Black, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: symmetry-conserved UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$. \tikz[baseline]{\node[draw, Gray!60!Black, densely dotted, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: spatial or spin symmetry-broken UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$.\\[6pt]
 					$\Gamma[\mathrm{A}\oplus\mathrm{B}\oplus\mathrm{C}]$: a specific NOCI set of symmetry $\Gamma$ constructed from all of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$. $\Gamma[\mathrm{A}, \mathrm{B}, \mathrm{C}]$: multiple NOCI sets of symmetry $\Gamma$ constructed from all non-trivial combinations of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$.
 				}
+				\label{fig:d2_allnoci}
 			\end{figure}
-		\end{block}
+		\end{alertblock}
 	\end{column}
 
 	\separatorcolumn
@@ -164,60 +194,52 @@
 
 	\begin{column}{\colwidth}
 	
-%		\begin{block}{Searching for Multiple SCF Solutions}
-%			The HF equations are non-linear and therefore admit multiple solutions. These solutions can be found using metadynamics combined with a conventional SCF converging algorithm, such as DIIS.
-%			
-%			\begin{figure}
-%				\centering
-%				\useexternalfile{metdy}
-%				\captionsetup{justification=centering}
-%				\caption{
-%					SCF metadynamics.\\[6pt]
-%					A biasing potential (dashed blue) is applied to the original SCF energy landscape (solid red) to give the modified energy (solid green) which has the deeper minimum `filled up' so that reconverging into it is unlikely.
-%				}
-%			\end{figure}
-%	
-%	  	\end{block}
+		\begin{block}{Introduction}
+			Transition-metal complexes are strongly correlated as they have many low-energy electronic states that exhibit high degrees of degeneracy by virtue of $d$ electrons. \Cref{fig:corrTSd2} gives such states for octahedral $d^2$ as an example.
+			
+				\begin{figure}
+					\begin{subfigure}[b]{0.49\textwidth}
+						\centering
+						\useexternalfile{corrd2}
+						\caption{Correlation diagram (not to scale)}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}[b]{0.49\textwidth}
+						\centering
+						\useexternalfile{TSd2}
+						\caption{Tanabe--Sugano diagram}
+					\end{subfigure}
+					\caption{All electronic terms of a true $d^2$ system in an octahedral field.}
+					\label{fig:corrTSd2}
+				\end{figure}
+				
+			The non-linear HF equations for these complexes are therefore expected to admit multiple low-lying and degenerate or nearly degenerate solutions that are physically significant.
+			
+			We have located these solutions using SCF metadynamics\autocite{article:Thom2008} and investigated their symmetry properties in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
+	  	\end{block}
 	
-	  \begin{block}{Symmetry Breaking in SCF Methods}
-	
-	    Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-	    sagittis metus. Etiam consectetur gravida urna quis suscipit.
-	
-	    \begin{itemize}
-	      \item \textbf{Mauris tempor} risus nulla, sed ornare
-	      \item \textbf{Libero tincidunt} a duis congue vitae
-	      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
-	    \end{itemize}
-	
-	    Eget augue porta, bibendum venenatis tortor.
-	
-	  \end{block}
-	
-	  \begin{alertblock}{A highlighted block}
-	
-	    This block catches your eye, so \textbf{important stuff} should probably go
-	    here.
-	
-	    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-	    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-	    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-	    tristique odio convallis ultrices a ac odio.
-	
-	    \begin{itemize}
-	      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. In
-	        consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-	      \item \textbf{In euismod erat metus} non ex. Vestibulum luctus augue in
-	        mi condimentum, at sollicitudin lorem viverra.
-	      \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-	        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in
-	        suscipit felis sapien vel ex.
-	    \end{itemize}
-	
-	    Aenean tincidunt risus eros, at gravida lorem sagittis vel. Vestibulum ante
-	    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-	
-	  \end{alertblock}
+		\begin{block}{Symmetry Breaking in HF}
+			Each degenerate set of exact solutions to the spinless electronic Schr\"{o}ndinger equation \emph{must} transform as a single irreducible representation (irrep) of the underlying point group $\mathcal{B}$, the spin rotation group $\mathsf{SU}(2)$, and the time reversal group $\mathcal{T}$.
+			
+			The approximated nature of HF does not guarantee this, however. Specifically, UHF wavefunctions are not necessarily eigenfunctions of $\hat{S}^2$ nor do they and their degenerate partners have to transform as a single irreducible representation of $\mathcal{B}$.
+			
+			Thus, consider a degenerate set %
+				$\mathrm{S} =
+					\left\lbrace
+						\prescript{w}{}{\Psi} %
+						\ | \ %
+						w = 1, 2, \ldots %
+					\right\rbrace%
+				$ %
+			and a particular group $\mathcal{G}$:
+				\begin{itemize}
+					\item if $\mathrm{S}$ spans a single irrep in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{symmetry-conserved} in $\mathcal{G}$;
+					\item if $\mathrm{S}$ spans a representation that can be reduced to multiple
+					irreps in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{symmetry-broken} in $\mathcal{G}$.
+				\end{itemize}
+
+			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. Restoring symmetry of symmetry-broken HF solutions allows us to form physically meaningful wavefunctions while incorporating said correlation.
+		\end{block}
 	
 	\end{column}
 	
@@ -225,76 +247,40 @@
 	
 	\begin{column}{\colwidth}
 	
-	  \begin{block}{A block containing some math}
+		\begin{block}{Non-Orthogonal Configuration Interaction (NOCI)}
+			For a symmetry-broken set %
+				$\mathrm{S} =
+					\left\lbrace
+						\prescript{w}{}{\Psi} %
+						\ | \ %
+						w = 1, 2, \ldots %
+					\right\rbrace%
+				$, %
+			solving the generalised eigenvalue equation
+				\begin{equation*}
+					\boldsymbol{HA} = \boldsymbol{SAE} \quad %
+					\textsf{where} \quad %
+					\left(\boldsymbol{H}\right)_{wx} =
+					\braket{\prescript{w}{}{\Psi}|\hat{\mathscr{H}}|\prescript{x}{}{\Psi}} \  %
+					\textsf{and} \  %
+					\left(\boldsymbol{S}\right)_{wx} = \braket{\prescript{w}{}{\Psi}|\prescript{x}{}{\Psi}} %
+				\end{equation*}
+			gives coefficients $A_{wm}$ such that the NOCI wavefunctions
+				\begin{equation*}
+					\prescript{m}{}{\Phi} = \sum_{w} \prescript{w}{}{\Psi} A_{wm}
+				\end{equation*}
+			can be segregated into symmetry-conserved sets. These can then be used to approximate actual electronic terms of the corresponding symmetry.
+		\end{block}
 	
-	    Nullam non est elit. In eu ornare justo. Maecenas porttitor sodales lacus,
-	    ut cursus augue sodales ac.
-	
-	    $$
-	    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-	    $$
-	
-	    Interdum et malesuada fames $\{1, 4, 9, \ldots\}$ ac ante ipsum primis in
-	    faucibus. Cras eleifend dolor eu nulla suscipit suscipit. Sed lobortis non
-	    felis id vulputate.
-	
-	    \heading{A heading inside a block}
-	
-	    Praesent consectetur mi $x^2 + y^2$ metus, nec vestibulum justo viverra
-	    nec. Proin eget nulla pretium, egestas magna aliquam, mollis neque. Vivamus
-	    dictum $\mathbf{u}^\intercal\mathbf{v}$ sagittis odio, vel porta erat
-	    congue sed. Maecenas ut dolor quis arcu auctor porttitor.
-	
-	    \heading{Another heading inside a block}
-	
-	    Sed augue erat, scelerisque a purus ultricies, placerat porttitor neque.
-	    Donec $P(y \mid x)$ fermentum consectetur $\nabla_x P(y \mid x)$ sapien
-	    sagittis egestas. Duis eget leo euismod nunc viverra imperdiet nec id
-	    justo.
-	
-	  \end{block}
-	
-	  \begin{block}{Nullam vel erat at velit convallis laoreet}
-	
-	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-	    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-	    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
-	
-	    \begin{table}
-	      \centering
-	      \begin{tabular}{l r r c}
-	        \toprule
-	        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-	        \midrule
-	        Foo & 13.37 & 384,394 & $\alpha$ \\
-	        Bar & 2.17 & 1,392 & $\beta$ \\
-	        Baz & 3.14 & 83,742 & $\delta$ \\
-	        Qux & 7.59 & 974 & $\gamma$ \\
-	        \bottomrule
-	      \end{tabular}
-	      \caption{A table caption.}
-	    \end{table}
-	
-	    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-	    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-	    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-	    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-	    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-	    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-	    ad litora torquent per conubia nostra, per inceptos himenaeos.
-	
-	    Nulla varius finibus volutpat. Mauris molestie lorem tincidunt, iaculis
-	    libero at, gravida ante. Phasellus at felis eu neque suscipit suscipit.
-	    Integer ullamcorper, dui nec pretium ornare, urna dolor consequat libero,
-	    in feugiat elit lorem euismod lacus. Pellentesque sit amet dolor mollis,
-	    auctor urna non, tempus sem.
-	
-	  \end{block}
+		\begin{block}{UHF vs. NOCI: Jahn--Teller Distortion}
+			
+		\end{block}
 	
 	  \begin{block}{References}
 	
 	    \nocite{*}
-	    \footnotesize{\bibliographystyle{plain}\bibliography{bib/mqm2019poster}}
+	    \AtNextBibliography{\footnotesize}
+	    \printbibliography[title=none]
 	
 	  \end{block}
 	
