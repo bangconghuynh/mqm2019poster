@@ -88,24 +88,31 @@
 			% A orbitals
 			\node[draw, red, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Aorb) at (axis cs:16,-1539.355) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/A_o161_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/A_o161_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Asym.east)$) .. controls ($(Asym.east) + (1cm,0cm)$) and ($(Aorb.west) + (-1cm,0cm)$) .. (Aorb);
+			\node[anchor = west] (AS2) at ($(Aorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0040$};
 			% Adash orbitals
 			\node[draw, red, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Adashorb) at (axis cs:16,-1539.336) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/Adash_o185_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/Adash_o185_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Adashsym.east)$) .. controls ($(Adashsym.east) + (1cm,0cm)$) and ($(Adashorb.west) + (-1cm,0cm)$) .. (Adashorb);
+			\node[anchor = west] (AdashS2) at ($(Adashorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0040$};
 			% B orbitals
 			\node[draw, Gray!60!Black, fill = white, anchor = west, inner sep=1pt] (Borb) at (axis cs:16,-1539.309) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/B_o53_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/B_o53_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Bsym.east)$) .. controls ($(Bsym.east) + (1cm,0cm)$) and ($(Borb.west) + (-1cm,0cm)$) .. (Borb);
+			\node[anchor = west] (BS2) at ($(Borb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0045$};
 			% C orbitals
 			\node[draw, Gray!60!Black, fill = white, anchor = west, inner sep=1pt] (Corb) at (axis cs:16,-1539.282) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/C_o13_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/C_o13_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Csym.east)$) .. controls ($(Csym.east) + (1cm,0cm)$) and ($(Corb.west) + (-1cm,0cm)$) .. (Corb);
+			\node[anchor = west] (CS2) at ($(Corb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0035$};
 			% D orbitals
 			\node[draw, red, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Dorb) at (axis cs:16,-1539.261) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/D_o209_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/D_o209_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Dsym.east)$) .. controls ($(Dsym.east) + (1cm,0cm)$) and ($(Dorb.west) + (-1cm,0cm)$) .. (Dorb);
+			\node[anchor = west] (DS2) at ($(Dorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0039$};
 			% E orbitals
 			\node[draw, Gray!60!Black, fill = white, anchor = west, inner sep=1pt] (Eorb) at (axis cs:16,-1539.237) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/E_o217_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/E_o217_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Esym.east)$) .. controls ($(Esym.east) + (1cm,0cm)$) and ($(Eorb.west) + (-1cm,0cm)$) .. (Eorb);
+			\node[anchor = west] (ES2) at ($(Eorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0049$};
 			% F orbitals
 			\node[draw, Gray!60!Black, fill = white, anchor = west, inner sep=1pt] (Forb) at (axis cs:16,-1539.216) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/F_o65_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/F_o65_41_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Fsym.east)$) .. controls ($(Fsym.east) + (1cm,0cm)$) and ($(Forb.west) + (-1cm,0cm)$) .. (Forb);
+			\node[anchor = west] (FS2) at ($(Forb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0044$};
 			%%
 			%% NOCI
 			% T1g[A,Adash,B]
