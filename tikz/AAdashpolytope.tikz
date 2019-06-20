@@ -1,0 +1,74 @@
+\begin{tikzpicture}[
+	rotate around y=75,
+	rotate around x=-30,
+	scale = 5.0,
+	]
+	% A
+	%% Coord def
+	\coordinate (A1) at (0, 0, 0);
+	\coordinate (A2) at (1.4053461851, 0, 0);
+	\coordinate (A3) at (0.7026730926, 1.2170655385, 0);
+	\coordinate (A4) at (0.7026730926, 0.4056885676, 1.1474603745);	
+	% Adash
+	%% Coord def
+	\coordinate (Adash1) at (0.7026730926, -0.2311715895, -0.1634629902);
+	\coordinate (Adash2) at (1.2542101503,  0.7241185845, -0.1634630358);
+	\coordinate (Adash3) at (0.1511360348,  0.0872584685,  0.7371932231);
+	\coordinate (Adash4) at (1.2542101503,  0.0872584685,  0.7371932231);
+	\coordinate (Adash5) at (0.1511360348,  0.7241185845, -0.1634630358);
+	\coordinate (Adash6) at (0.7026730926,  1.0425486425,  0.7371931775);
+	%% Draw lines
+	% Adash4 -- Adash6
+	\draw[red, thin] (Adash4) -- ($(Adash4)!0.26!(Adash6)$);
+	\draw[red, thin, densely dashed] ($(Adash4)!0.26!(Adash6)$) -- ($(Adash4)!0.44!(Adash6)$);
+	\draw[red, thin] ($(Adash4)!0.44!(Adash6)$) -- (Adash6);
+	\draw[red, thin, densely dashed] (Adash2) -- (Adash6);
+	\draw[red, thin, densely dashed] (Adash2) -- (Adash5);
+	\draw[red, thin, densely dashed] (Adash1) -- (Adash2);
+	% Adash1 -- Adash5
+	\draw[red, thin] (Adash1) -- ($(Adash1)!0.22!(Adash5)$);
+	\draw[red, thin, densely dashed] ($(Adash1)!0.22!(Adash5)$) -- ($(Adash1)!0.59!(Adash5)$);
+	\draw[red, thin] ($(Adash1)!0.59!(Adash5)$) -- (Adash5);
+	% Adash2 -- Adash4
+	\draw[red, thin, densely dashed] (Adash2) -- (Adash4);
+	% A2 -- A1
+	\draw[Blue, thick, densely dashed] (A2) -- ($(A2)!0.6!(A1)$);
+	\draw[Blue, thick] ($(A2)!0.6!(A1)$) -- (A1);
+	% A1 -- A4
+	\draw[Blue, thick] (A1) -- ($(A1)!0.3!(A4)$);
+	\draw[Blue, thick, densely dashed] ($(A1)!0.3!(A4)$) -- ($(A1)!0.7!(A4)$);
+	\draw[Blue, thick] ($(A1)!0.7!(A4)$) -- (A4);
+	% A2 -- A3
+	\draw[Blue, thick, densely dashed] (A2) -- (A3);
+	% A3 -- A4
+	\draw[Blue, thick] (A3) -- ($(A3)!0.3!(A4)$);
+	\draw[Blue, thick, densely dashed] ($(A3)!0.3!(A4)$) -- ($(A3)!0.7!(A4)$);
+	\draw[Blue, thick] ($(A3)!0.7!(A4)$) -- (A4);
+	% A4 -- A2
+	\draw[Blue, thick] (A4) -- ($(A4)!0.2!(A2)$);
+	\draw[Blue, thick, densely dashed] ($(A4)!0.2!(A2)$) -- (A2);
+	% A1 -- A3
+	\draw[Blue, thick] (A1) -- ($(A1)!0.3!(A3)$);
+	\draw[Blue, thick, densely dashed] ($(A1)!0.3!(A3)$) -- ($(A1)!0.68!(A3)$);
+	\draw[Blue, thick] ($(A1)!0.68!(A3)$) -- (A3);
+	\draw[red, thin] (Adash1) -- (Adash4);
+	\draw[red, thin] (Adash5) -- (Adash6);
+	\draw[red, thin] (Adash5) -- (Adash3);
+	\draw[red, thin] (Adash3) -- (Adash6);
+	\draw[red, thin] (Adash4) -- (Adash3);
+	\draw[red, thin] (Adash3) -- (Adash1);
+	%% Plot states
+	\foreach \astate in {A1, A2, A3, A4} \node at (\astate)[circle, fill = Blue, draw = black, inner sep=2pt]{};
+	\foreach \adashstate in {Adash1, Adash2, Adash3, Adash4, Adash5, Adash6} \node at (\adashstate)[circle, fill = red, draw = black, inner sep=2pt]{};
+	%% Label states
+	\node[anchor = north east, Blue, inner sep = 0pt] (AElabel) at (A1) {\scriptsize $\mathrm{A}_1$};
+	\node[anchor = north west, Blue] (AC21label) at (A2) {\scriptsize $\mathrm{A}_2$};
+	\node[anchor = south east, Blue, inner sep = 2pt] (AC24label) at (A3) {\scriptsize $\mathrm{A}_3$};
+	\node[anchor = south west, Blue, inner sep = 2pt] (AC21label) at (A4) {\scriptsize $\mathrm{A}_4$};
+	\node[anchor = north east, red] (AdashElabel) at ($(Adash1)+(0.11,0,0)$) {\scriptsize $\mathrm{A}'_1$};
+	\node[anchor = south west, inner sep = 2pt, red] (AdashC30label) at ($(Adash2)+(0.02,-0.03,0)$) {\scriptsize $\mathrm{A}'_2$};
+	\node[anchor = south east, inner sep = 3pt, red] (AdashCm30label) at (Adash3) {\scriptsize $\mathrm{A}'_3$};
+	\node[anchor = north west, red, inner sep = 1pt] (AdashC41label) at (Adash4) {\scriptsize $\mathrm{A}'_4$};
+	\node[anchor = east, inner sep = 4pt, red] (AdashC4130label) at (Adash5) {\scriptsize $\mathrm{A}'_5$};
+	\node[anchor = south west, inner sep = 2pt, red] (AdashC41m30label) at (Adash6) {\scriptsize $\mathrm{A}'_6$};
+\end{tikzpicture}

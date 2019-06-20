@@ -202,7 +202,7 @@
 			% 1T1g[E]
 			\node[anchor = west, inner sep = 3pt] (1T1gE) at (axis cs:7,-1539.207) {\scriptsize $\prescript{1}{}{T}_{1g}[\mathrm{E}_0]$};
 			\draw[thin, ->] (axis cs:3.1,-1539.2034665) -- ($(1T1gE.west)$);
-		},
+		}
 	]
 		\addplot+[
 			mark = none,

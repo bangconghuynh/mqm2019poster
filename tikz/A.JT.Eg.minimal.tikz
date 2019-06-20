@@ -11,7 +11,7 @@
 			xlabels at = edge bottom,
 			xticklabels at = edge bottom,
 			ylabels at = edge left,
-			horizontal sep = 3cm,
+			horizontal sep = 2cm,
 		},
 		%% Groupplot general %%%%%%%%
 		width = 15cm,
@@ -34,7 +34,7 @@
 		ylabel = {Energy / $\si{\hartree}$},
 		label style = {font = \footnotesize},
 		xlabel style = {align = center},
-		tick label style = {font = \footnotesize},
+		tick label style = {font = \scriptsize},
 		scaled y ticks=manual:{}{
 			\pgfluamathparse{#1/100.0-1539.0}
 		},
@@ -71,14 +71,26 @@
 		\nextgroupplot[
 			%% Subplot general %%%%%%%%%%
 			align = center,
-			xlabel = {$S_2 / \si{\AA}$},
-			title = {$E_{g}u$ mode, $\mathcal{O}_h \rightarrow \mathcal{D}_{4h}$},
+			xlabel = {$S_2 / \si{\angstrom}$},
+			title = {$e_{g}u$ distortion mode, $\mathcal{O}_h \rightarrow \mathcal{D}_{4h}$},
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			%% Legend format %%%%%%%%%%%%
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			%% Annotations %%%%%%%%%%%%%%
 			after end axis/.code = 
 			{
+				%%
+				%% UHF solutions
+				%%
+				% A (Oh)
+				\node[anchor = north, inner sep = 2pt] (A) at (axis cs:0.00,-34.275) {\tiny $\mathrm{A}_1$};
+				\draw[->] (axis cs:0.00,-34.24268224) -- (A);
+				% Adash (Oh)
+				\node[anchor = south, inner sep = 2pt] (Adash) at (axis cs:0.00,-34.135) {\tiny $\mathrm{A}'_1$};
+				\draw[->] (axis cs:0.00,-34.16345154) -- (Adash);
+				%%
+				%% NOCI
+				%%
 				% T1g (Oh)
 				\node[anchor = south, inner sep = 0pt] (T1g) at (axis cs:0.00,-34.50) {\tiny $\prescript{3}{}{T}_{1g}(\mathcal{O}_{h})$};
 				\draw[->] (axis cs:0.00,-34.42685) -- (T1g);
@@ -86,10 +98,17 @@
 				\node[anchor = south west, inner sep = 0pt] (3Eg.comp) at (axis cs:0.02,-34.46) {\tiny $\prescript{3}{}{E}_{g}\left(\mathcal{D}_{4h}\right)$};
 				% A2g (D4h)
 				\node[anchor = south west, inner sep = 0pt] (3A2g.elong) at (axis cs:-0.03,-34.44) {\tiny $\prescript{3}{}{A}_{2g}\left(\mathcal{D}_{4h}\right)$};
-	%			% Direction
-	%			\node[anchor = south east, inner sep = 1pt] (compression) at (axis cs:0.04,-1539.346) {\scriptsize compression};
-	%			\node[anchor = south west, inner sep = 1pt] (compression) at (axis cs:-0.04,-1539.346) {\scriptsize elongation};
-				% Vib mode
+				%%
+				%% UHF
+				%%
+				% A D4h symmetry
+				\node[anchor = south, inner sep = 0pt, scale=0.7] (Asym) at (axis cs:0,-34.23) {\tiny $A_{2g} \oplus B_{1g} \oplus E_{g}$};
+				% Adash D4h symmetry
+				\node[anchor = south west, inner sep = 0pt, scale=0.7] (AdashEgsym) at (axis cs:-0.034,-33.88) {\tiny $E_{g}$};
+				\node[anchor = south east, inner sep = 0pt, scale=0.7] (AdashA2gB2gEgsym) at (axis cs:0.0346,-33.88) {\tiny $A_{2g} \oplus B_{2g} \oplus E_{g}$};
+				%%
+				%% Vib mode
+				%%
 				\coordinate (octmol) at (axis cs:0,-33.9);
 				\draw ($(octmol) - (0,0.5\vibmodesize)$) -- ($(octmol) + (0,0.5\vibmodesize)$);
 				\draw ($(octmol) + (-0.458\vibmodesize,0.2\vibmodesize)$) -- ($(octmol) + (0.458\vibmodesize,-0.2\vibmodesize)$);
@@ -124,8 +143,8 @@
 		\nextgroupplot[
 			%% Subplot general %%%%%%%%%%
 			align = center,
-			xlabel = {$S_3 / \si{\AA}$},
-			title = {$E_{g}v$ mode, $\mathcal{O}_h \rightarrow \mathcal{D}_{2h}$},
+			xlabel = {$S_3 / \si{\angstrom}$},
+			title = {$e_{g}v$ distortion mode, $\mathcal{O}_h \rightarrow \mathcal{D}_{2h}$},
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			yticklabels={,,},
 			%% Legend format %%%%%%%%%%%%
@@ -133,18 +152,39 @@
 			%% Annotations %%%%%%%%%%%%%%
 			after end axis/.code = 
 			{
+				%%
+				%% UHF solutions
+				%%
 				% A (Oh)
 				\node[anchor = north, inner sep = 2pt] (A) at (axis cs:0.00,-34.275) {\tiny $\mathrm{A}_1$};
 				\draw[->] (axis cs:0.00,-34.24268224) -- (A);
 				% Adash (Oh)
 				\node[anchor = south, inner sep = 2pt] (Adash) at (axis cs:0.00,-34.135) {\tiny $\mathrm{A}'_1$};
 				\draw[->] (axis cs:0.00,-34.16345154) -- (Adash);
+				%%
+				%% NOCI
+				%%
 				% T1g (Oh)
 				\node[anchor = south, inner sep = 0pt] (T1g) at (axis cs:0.00,-34.50) {\tiny $\prescript{3}{}{T}_{1g}(\mathcal{O}_{h})$};
 				\draw[->] (axis cs:0.00,-34.42685) -- (T1g);
 				% B2g (D2h)
-				\node[anchor = south west, inner sep = 0pt] (3B2g) at (axis cs:0.03,-34.46) {\tiny $\prescript{3}{}{B}_{2g}\left(\mathcal{D}_{2h}\right)$};
-				% Vib mode
+				\node[anchor = south west, inner sep = 0pt] (3B2g) at (axis cs:0.027,-34.505) {\tiny $\prescript{3}{}{B}_{2g}(\mathcal{D}_{2h})$};
+				% B3g (D2h)
+				\node[anchor = south east, inner sep = 0pt] (3B3g) at (axis cs:-0.026,-34.505) {\tiny $\prescript{3}{}{B}_{3g}(\mathcal{D}_{2h})$};
+				% B1g (D2h)
+				\node[anchor = south east, inner sep = 0pt] (3B3g) at (axis cs:-0.026,-34.347) {\tiny $\prescript{3}{}{B}_{1g}(\mathcal{D}_{2h})$};
+				%%
+				%% UHF
+				%%
+				% A D2h symmetry
+				\node[anchor = west, inner sep = 0pt, align = center, scale=0.7] (Asym) at (axis cs:0.041,-34.15) {\tiny $A_g \oplus B_{1g} \oplus B_{2g} \oplus B_{3g}$};
+				% Adash D2h symmetry
+				\node[anchor = south west, inner sep = 0pt, scale=0.7] (AdashB1gB2gsym) at (axis cs:-0.035,-34.04) {\tiny $B_{1g} \oplus B_{2g}$};
+				\node[anchor = south east, inner sep = 0pt, scale=0.7] (AdashB1gB3gsym) at (axis cs:0.035,-34.04) {\tiny $B_{1g} \oplus B_{3g}$};
+				\node[anchor = west, inner sep = 0pt, scale=0.7] (AdashB2gB3gsym) at (axis cs:0.041,-34.07) {\tiny $B_{2g} \oplus B_{3g}$};
+				%%
+				%% Vib mode
+				%%
 				\coordinate (octmol) at (axis cs:0,-33.9);
 				\draw ($(octmol) - (0,0.5\vibmodesize)$) -- ($(octmol) + (0,0.5\vibmodesize)$);
 				\draw ($(octmol) + (-0.458\vibmodesize,0.2\vibmodesize)$) -- ($(octmol) + (0.458\vibmodesize,-0.2\vibmodesize)$);
@@ -161,7 +201,7 @@
 				\draw[->] ($1.1*(bottomleft) - 0.1*(topright)$) -- ($1.25*(bottomleft) - 0.25*(topright)$);
 				\draw[->] ($1.1*(topright) - 0.1*(bottomleft)$) -- ($1.25*(topright) - 0.25*(bottomleft)$);
 				\node[anchor = south west, inner sep = 1pt] (S2) at ($(topright) + (0.1\vibmodesize,0.1\vibmodesize)$) {\tiny $S_3$};
-			},
+			}
 		]	
 			\foreach \noci in {B2gshifted,B1gshifted,B3gshifted}{
 				\addplot+[thick, mark = none] table[x={S3}, y={\noci}]{\Egv};

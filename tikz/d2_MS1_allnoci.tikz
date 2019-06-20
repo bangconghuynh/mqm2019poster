@@ -139,7 +139,7 @@
 			% T1g(D+E)
 			\node[anchor = west, inner sep = 3pt] (T1gDE) at (axis cs:7,-1539.247) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{D}_1 \oplus \mathrm{E}_1]$};
 			\draw[thin, ->] (axis cs:3.1,-1539.2375246) -- ($(T1gDE.north west)$);
-		},
+		}
 	]
 		\addplot+[
 			mark = none,

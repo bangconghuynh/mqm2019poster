@@ -30,7 +30,7 @@
 
 % Scientific typesetting
 \usepackage{siunitx}
-\sisetup{detect-all}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
 
 
 % Micro-typography
@@ -179,8 +179,8 @@
 				\captionsetup{justification=centering}
 				\caption{
 					Energy and symmetry of low-lying UHF solutions and NOCI wavefunctions constructed from them in octahedral \ce{[VF6]^3-}.\\[6pt]
-					\tikz[baseline]{\node[draw, Gray!60!Black, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: symmetry-conserved UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$. \tikz[baseline]{\node[draw, Gray!60!Black, densely dotted, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: spatial or spin symmetry-broken UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$.\\[6pt]
-					$\Gamma[\mathrm{A}\oplus\mathrm{B}\oplus\mathrm{C}]$: a specific NOCI set of symmetry $\Gamma$ constructed from all of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$. $\Gamma[\mathrm{A}, \mathrm{B}, \mathrm{C}]$: multiple NOCI sets of symmetry $\Gamma$ constructed from all non-trivial combinations of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$.
+					\footnotesize \tikz[baseline]{\node[draw, Gray!60!Black, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: symmetry-conserved UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$. \tikz[baseline]{\node[draw, Gray!60!Black, densely dotted, inner sep = 3pt, anchor = base] {$\mathrm{S}_{M_S}$};}: spatial or spin symmetry-broken UHF set $\mathrm{S}$ with $\hat{S}_z$ eigenvalue $M_S$.\\[6pt]
+					\footnotesize  $\Gamma[\mathrm{A}\oplus\mathrm{B}\oplus\mathrm{C}]$: a specific NOCI set of symmetry $\Gamma$ constructed from all of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$. $\Gamma[\mathrm{A}, \mathrm{B}, \mathrm{C}]$: multiple NOCI sets of symmetry $\Gamma$ constructed from all non-trivial combinations of $\mathrm{A}$, $\mathrm{B}$, and $\mathrm{C}$.
 				}
 				\label{fig:d2_allnoci}
 			\end{figure}
@@ -216,13 +216,13 @@
 				
 			The non-linear HF equations for these complexes are therefore expected to admit multiple low-lying and degenerate or nearly degenerate solutions that are physically significant.
 			
-			We have located these solutions using SCF metadynamics\autocite{article:Thom2008} and investigated their symmetry properties in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
+			We have located these solutions using SCF metadynamics and investigated their symmetry properties in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
 	  	\end{block}
 	
-		\begin{block}{Symmetry Breaking in HF}
+		\begin{alertblock}{Symmetry Breaking in HF}
 			Each degenerate set of exact solutions to the spinless electronic Schr\"{o}ndinger equation \emph{must} transform as a single irreducible representation (irrep) of the underlying point group $\mathcal{B}$, the spin rotation group $\mathsf{SU}(2)$, and the time reversal group $\mathcal{T}$.
 			
-			The approximated nature of HF does not guarantee this, however. Specifically, UHF wavefunctions are not necessarily eigenfunctions of $\hat{S}^2$ nor do they and their degenerate partners have to transform as a single irreducible representation of $\mathcal{B}$.
+			However, UHF wavefunctions are not necessarily eigenfunctions of $\hat{S}^2$ nor do they and their degenerate partners have to transform as a single irreducible representation of $\mathcal{B}$.
 			
 			Thus, consider a degenerate set %
 				$\mathrm{S} =
@@ -234,13 +234,13 @@
 				$ %
 			and a particular group $\mathcal{G}$:
 				\begin{itemize}
-					\item if $\mathrm{S}$ spans a single irrep in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{symmetry-conserved} in $\mathcal{G}$;
+					\item if $\mathrm{S}$ spans a single irrep in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-conserved} in $\mathcal{G}$;
 					\item if $\mathrm{S}$ spans a representation that can be reduced to multiple
-					irreps in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{symmetry-broken} in $\mathcal{G}$.
+					irreps in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-broken} in $\mathcal{G}$.
 				\end{itemize}
 
 			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. Restoring symmetry of symmetry-broken HF solutions allows us to form physically meaningful wavefunctions while incorporating said correlation.
-		\end{block}
+		\end{alertblock}
 	
 	\end{column}
 	
@@ -249,15 +249,7 @@
 	\begin{column}{\colwidth}
 	
 		\begin{block}{Non-Orthogonal Configuration Interaction (NOCI)}
-			For a symmetry-broken set %
-				$\mathrm{S} =
-					\left\lbrace
-						\prescript{w}{}{\Psi} %
-						\ | \ %
-						w = 1, 2, \ldots %
-					\right\rbrace%
-				$, %
-			solving the generalised eigenvalue equation
+			For a symmetry-broken set $\mathrm{S}$, solving the generalised eigenvalue equation
 				\begin{equation*}
 					\boldsymbol{HA} = \boldsymbol{SAE} \quad %
 					\textsf{where} \quad %
@@ -270,21 +262,49 @@
 				\begin{equation*}
 					\prescript{m}{}{\Phi} = \sum_{w} \prescript{w}{}{\Psi} A_{wm}
 				\end{equation*}
-			can be segregated into symmetry-conserved sets. These can then be used to approximate actual electronic terms of the corresponding symmetry.
+			restore symmetry and can be used to approximate corresponding electronic terms.
 		\end{block}
 	
 		\begin{block}{UHF vs. NOCI: Jahn--Teller Distortion}
+			As shown in \cref{fig:JT}, the symmetry-broken UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit reasonable minima expected for the $T_{1g} \otimes e_g$ Jahn--Teller distortion.
+			The $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ NOCI wavefunctions, however, do and also give the correct degeneracy splitting.
+			
+			
+			
 			\begin{figure}
 				\centering
 				\useexternalfile{A.JT.Eg.minimal}
-				\caption{Correlation diagram (not to scale)}
+				\captionsetup{justification=centering}
+				\caption{
+					State energy in the $T_{1g} \otimes e_g$ Jahn--Teller distortion of octahedral \ce{[VF6]^{3-}}.\\[6pt]
+					\footnotesize Dashed curves: symmetry-broken UHF $\mathrm{A}_1$ or $\mathrm{A}'_1$ solutions. Solid curves: $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ NOCI wavefunctions.}
+				\label{fig:JT}
+			\end{figure}
+		\end{block}
+		
+		\begin{block}{Solution Topology: Euclidean Representation of State Distances}
+			\begin{figure}
+%				\begin{subfigure}[b]{0.49\textwidth}
+%					\centering
+%					\useexternalfile{corrd2}
+%					\caption{Correlation diagram (not to scale)}
+%				\end{subfigure}
+%				\hfill
+%				\begin{subfigure}[b]{0.49\textwidth}
+%					\centering
+%					\useexternalfile{TSd2}
+%					\caption{Tanabe--Sugano diagram}
+%				\end{subfigure}
+				\useexternalfile{AAdashpolytope}
+				\caption{}
+				\label{fig:AAdashpolytope}
 			\end{figure}
 		\end{block}
 	
 	  \begin{block}{References}
 	
-	    \nocite{*}
 	    \AtNextBibliography{\footnotesize}
+	    \nocite{*}
 	    \printbibliography[title=none]
 	
 	  \end{block}
