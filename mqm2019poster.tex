@@ -216,7 +216,7 @@
 				
 			The \textbf{\color{Blue} non-linear} HF equations for these complexes therefore admit \textbf{\color{Blue} multiple low-lying solutions} that are \textbf{\color{Blue} degenerate} or \textbf{\color{Blue} nearly degenerate}.
 			
-			We have located these solutions using \textbf{\color{red} SCF metadynamics} and investigated their \textbf{\color{red} symmetry properties} in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
+			We have located these solutions using \textbf{\color{red} SCF metadynamics} and investigated their \textbf{\color{red} symmetry properties} in a model octahedral $d^2$ system, \ce{[VF6]^{3-}} (\cref{fig:d2_allnoci}).
 	  	\end{block}
 	
 		\begin{alertblock}{Symmetry Breaking in HF}
@@ -255,7 +255,7 @@
 	\begin{column}{\colwidth}
 	
 		\begin{block}{Non-Orthogonal Configuration Interaction (NOCI)}
-			For a symmetry-broken set $\mathrm{S}$, solving the generalised eigenvalue equation
+			For a symmetry-broken set $\mathrm{S}$, solving the \textbf{\color{Blue} generalised eigenvalue equation}
 				\begin{equation*}
 					\boldsymbol{HA} = \boldsymbol{SAE} \quad %
 					\textsf{where} \quad %
@@ -264,18 +264,18 @@
 					\textsf{and} \  %
 					\left(\boldsymbol{S}\right)_{wx} = \braket{\prescript{w}{}{\Psi}|\prescript{x}{}{\Psi}} %
 				\end{equation*}
-			gives coefficients $A_{wm}$ such that the NOCI wavefunctions
+			gives coefficients $A_{wm}$ such that the \textbf{\color{Blue} NOCI wavefunctions}
 				\begin{equation*}
 					\prescript{m}{}{\Phi} = \sum_{w} \prescript{w}{}{\Psi} A_{wm}
 				\end{equation*}
-			restore symmetry and can be used to approximate corresponding electronic terms.
+			\textbf{\color{red} conserve symmetry} and can be used to approximate corresponding electronic terms.
 		\end{block}
 	
 		\begin{block}{UHF vs. NOCI: Jahn--Teller Distortion}
-			\Cref{fig:JT} shows that:
+			Consider the $T_{1g} \otimes e_g$ Jahn--Teller distortion in octaheral \ce{[VF6]^{3-}}. \Cref{fig:JT} shows that:
 				\begin{itemize}
-					\item the symmetry-broken UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit minima expected for the $T_{1g} \otimes e_g$ Jahn--Teller distortion;
-					\item the $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ NOCI wavefunctions do show the expected minima and give the correct degeneracy splitting.
+					\item the UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit the expected energy minima;
+					\item the $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ \textbf{\color{Blue} NOCI wavefunctions} do \textbf{\color{Red} show the expected stabilisation} and give the \textbf{\color{Red} correct degeneracy splitting}.
 				\end{itemize}
 			
 			
@@ -291,22 +291,30 @@
 			\end{figure}
 		\end{block}
 		
-		\begin{block}{Solution Topology: Euclidean Representation of State Distances}
+		\begin{block}{Solution Topology: Euclidean Realisation of State Distances}
+			% Interpreting state distances as Euclidean distances, 
+			By realising the distance matrices between symmetry-broken HF solutions as \textbf{\color{Blue} polytopes} showing their \textbf{\color{Blue} arrangements in Euclidean space} (\cref{fig:AAdashpolytopes}), we hope to gain insight into the nature of their symmetry breaking.
+			
 			\begin{figure}
-%				\begin{subfigure}[b]{0.49\textwidth}
-%					\centering
-%					\useexternalfile{corrd2}
-%					\caption{Correlation diagram (not to scale)}
-%				\end{subfigure}
-%				\hfill
-%				\begin{subfigure}[b]{0.49\textwidth}
-%					\centering
-%					\useexternalfile{TSd2}
-%					\caption{Tanabe--Sugano diagram}
-%				\end{subfigure}
-				\useexternalfile{AAdashpolytope}
-				\caption{}
-				\label{fig:AAdashpolytope}
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\useexternalfile{AAdashpolytope.Egu.elongation.g8}
+					\caption{$S_2 = \SI{-0.04}{\angstrom}$}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\useexternalfile{AAdashpolytope.Egu.compression.g0}
+					\caption{$S_2 = 0$}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\useexternalfile{AAdashpolytope.Egu.compression.g8}
+					\caption{$S_2 = \SI{0.04}{\angstrom}$}
+				\end{subfigure}
+				\caption{Three-dimensional projections of polytopes of $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions along the $e_{g}u$ distortion.}
+				\label{fig:AAdashpolytopes}
 			\end{figure}
 		\end{block}
 	
