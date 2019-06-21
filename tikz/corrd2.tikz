@@ -36,7 +36,7 @@
 	% 1G
 	\node (1T11G) at ($(1G) + (3.2,-1)$) {};
 	\draw[very thick] ($(1T11G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\scriptsize $\prescript{1}{}{T}_{1g}$};
-	\node (1T21G) at ($(1G) + (3.2,-0.4)$) {};
+	\node (1T21G) at ($(1G) + (3.2,-0.3)$) {};
 	\draw[very thick] ($(1T21G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\scriptsize $\prescript{1}{}{T}_{2g}$};
 	\node (1E1G) at ($(1G) + (3.2,0.6)$) {};
 	\draw[very thick] ($(1E1G) + (-0.4,0)$) -- +(0.8,0) node [midway, above, inner sep = 0pt] {\scriptsize $\prescript{1}{}{E}_g$};

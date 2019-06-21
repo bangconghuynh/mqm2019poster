@@ -100,31 +100,31 @@
 			%%
 			%% UHF orbitals
 			% A orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Aorb) at (axis cs:21,-1539.343) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Aorb) at (axis cs:21,-1539.343) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/A_o_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Asym.east)$) .. controls ($(Asym.east) + (1cm,0cm)$) and ($(Aorb.west) + (-1cm,0cm)$) .. (Aorb);
 			\node[anchor = west] (AS2) at ($(Aorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 1.0025$};
 			% Adash orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Adashorb) at (axis cs:21,-1539.324) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Adashorb) at (axis cs:21,-1539.324) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Adash_o8_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Adashsym.east)$) .. controls ($(Adashsym.east) + (1cm,0cm)$) and ($(Adashorb.west) + (-1cm,0cm)$) .. (Adashorb);
 			\node[anchor = west] (AdashS2) at ($(Adashorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 1.0029$};
 			% Addash orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Addashorb) at (axis cs:21,-1539.297) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Addashorb) at (axis cs:21,-1539.297) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/Addash_o6_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Addashsym.east)$) .. controls ($(Addashsym.east) + (1cm,0cm)$) and ($(Addashorb.west) + (-1cm,0cm)$) .. (Addashorb);
 			\node[anchor = west] (AddashS2) at ($(Addashorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 1.0037$};
 			% B orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Borb) at (axis cs:21,-1539.275) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Borb) at (axis cs:21,-1539.275) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/B_o29_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Bsym.east)$) .. controls ($(Bsym.east) + (1cm,0cm)$) and ($(Borb.west) + (-1cm,0cm)$) .. (Borb);
 			\node[anchor = west] (BS2) at ($(Borb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 0.8090$};
 			% C orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Corb) at (axis cs:21,-1539.255) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Corb) at (axis cs:21,-1539.255) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/C_o3_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Csym.east)$) .. controls ($(Csym.east) + (1cm,0cm)$) and ($(Corb.west) + (-1cm,0cm)$) .. (Corb);
 			\node[anchor = west] (CS2) at ($(Corb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 1.0034$};
 			% D orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Dorb) at (axis cs:21,-1539.235) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Dorb) at (axis cs:21,-1539.235) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/D_o1_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Dsym.east)$) .. controls ($(Dsym.east) + (1cm,0cm)$) and ($(Dorb.west) + (-1cm,0cm)$) .. (Dorb);
 			\node[anchor = west] (DS2) at ($(Dorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 0.0000$};
 			% E orbitals
-			\node[draw, Blue, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Eorb) at (axis cs:21,-1539.215) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_80_1200ppi}};
+			\node[draw, Blue, thick, fill = white, densely dotted, thick, anchor = west, inner sep=1pt] (Eorb) at (axis cs:21,-1539.215) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS0/E_o14_80_1200ppi}};
 			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Esym.east)$) .. controls ($(Esym.east) + (1cm,0cm)$) and ($(Eorb.west) + (-1cm,0cm)$) .. (Eorb);
 			\node[anchor = west] (ES2) at ($(Eorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 1.0046$};
 			%%

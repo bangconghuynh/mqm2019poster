@@ -196,7 +196,7 @@
 	\begin{column}{\colwidth}
 	
 		\begin{block}{Introduction}
-			Transition-metal complexes are strongly correlated as they have many low-energy electronic states that exhibit high degrees of degeneracy by virtue of $d$ electrons. \Cref{fig:corrTSd2} gives such states for octahedral $d^2$ as an example.
+			Transition-metal complexes are \textbf{\color{Blue} strongly correlated} as they have many low-energy electronic states that exhibit \textbf{\color{Blue} high degrees of degeneracy}. \Cref{fig:corrTSd2} gives such states for octahedral $d^2$ as an example.
 			
 				\begin{figure}
 					\begin{subfigure}[b]{0.49\textwidth}
@@ -214,17 +214,15 @@
 					\label{fig:corrTSd2}
 				\end{figure}
 				
-			The non-linear HF equations for these complexes are therefore expected to admit multiple low-lying and degenerate or nearly degenerate solutions that are physically significant.
+			The \textbf{\color{Blue} non-linear} HF equations for these complexes therefore admit \textbf{\color{Blue} multiple low-lying solutions} that are \textbf{\color{Blue} degenerate} or \textbf{\color{Blue} nearly degenerate}.
 			
-			We have located these solutions using SCF metadynamics and investigated their symmetry properties in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
+			We have located these solutions using \textbf{\color{red} SCF metadynamics} and investigated their \textbf{\color{red} symmetry properties} in a model octahedral \ce{[VF6]^{3-}} system (\cref{fig:d2_allnoci}).
 	  	\end{block}
 	
 		\begin{alertblock}{Symmetry Breaking in HF}
-			Each degenerate set of exact solutions to the spinless electronic Schr\"{o}ndinger equation \emph{must} transform as a single irreducible representation (irrep) of the underlying point group $\mathcal{B}$, the spin rotation group $\mathsf{SU}(2)$, and the time reversal group $\mathcal{T}$.
-			
-			However, UHF wavefunctions are not necessarily eigenfunctions of $\hat{S}^2$ nor do they and their degenerate partners have to transform as a single irreducible representation of $\mathcal{B}$.
-			
-			Thus, consider a degenerate set %
+			Degenerate eigenfunctions of the spinless Hamiltonian \emph{must} transform as a single irreducible representation (irrep) of the underlying point group $\mathcal{B}$, the spin rotation group $\mathsf{SU}(2)$, or the time reversal group $\mathcal{T}$.
+
+			HF wavefunctions do not have to obey this due to their approximate nature. Thus, consider a set of degenerate HF solutions %
 				$\mathrm{S} =
 					\left\lbrace
 						\prescript{w}{}{\Psi} %
@@ -232,15 +230,23 @@
 						w = 1, 2, \ldots %
 					\right\rbrace%
 				$ %
-			and a particular group $\mathcal{G}$:
+			and a group $\mathcal{G}$:
 				\begin{itemize}
-					\item if $\mathrm{S}$ spans a single irrep in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-conserved} in $\mathcal{G}$;
-					\item if $\mathrm{S}$ spans a representation that can be reduced to multiple
-					irreps in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-broken} in $\mathcal{G}$.
+					\item if $\mathrm{S}$ spans a \textbf{\color{Blue} single irrep} in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-conserved} in $\mathcal{G}$;
+					\item if $\mathrm{S}$ spans \textbf{\color{Blue} multiple
+					irreps} in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-broken} in $\mathcal{G}$.
 				\end{itemize}
 
-			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. Restoring symmetry of symmetry-broken HF solutions allows us to form physically meaningful wavefunctions while incorporating said correlation.
+			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. \textbf{\color{Blue} Restoring symmetry} of symmetry-broken HF solutions allows us to form \textbf{\color{Blue} physically meaningful wavefunctions} while \textbf{\color{Blue} incorporating said correlation}.
 		\end{alertblock}
+	
+  		\begin{block}{References}
+			
+			\AtNextBibliography{\footnotesize}
+			\nocite{*}
+			\printbibliography[title=none]
+			
+		\end{block}
 	
 	\end{column}
 	
@@ -266,8 +272,11 @@
 		\end{block}
 	
 		\begin{block}{UHF vs. NOCI: Jahn--Teller Distortion}
-			As shown in \cref{fig:JT}, the symmetry-broken UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit reasonable minima expected for the $T_{1g} \otimes e_g$ Jahn--Teller distortion.
-			The $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ NOCI wavefunctions, however, do and also give the correct degeneracy splitting.
+			\Cref{fig:JT} shows that:
+				\begin{itemize}
+					\item the symmetry-broken UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit minima expected for the $T_{1g} \otimes e_g$ Jahn--Teller distortion;
+					\item the $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ NOCI wavefunctions do show the expected minima and give the correct degeneracy splitting.
+				\end{itemize}
 			
 			
 			
@@ -300,14 +309,6 @@
 				\label{fig:AAdashpolytope}
 			\end{figure}
 		\end{block}
-	
-	  \begin{block}{References}
-	
-	    \AtNextBibliography{\footnotesize}
-	    \nocite{*}
-	    \printbibliography[title=none]
-	
-	  \end{block}
 	
 	\end{column}
 	

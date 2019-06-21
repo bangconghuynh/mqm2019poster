@@ -61,14 +61,14 @@
 	\foreach \astate in {A1, A2, A3, A4} \node at (\astate)[circle, fill = Blue, draw = black, inner sep=2pt]{};
 	\foreach \adashstate in {Adash1, Adash2, Adash3, Adash4, Adash5, Adash6} \node at (\adashstate)[circle, fill = red, draw = black, inner sep=2pt]{};
 	%% Label states
-	\node[anchor = north east, Blue, inner sep = 0pt] (AElabel) at (A1) {\scriptsize $\mathrm{A}_1$};
-	\node[anchor = north west, Blue] (AC21label) at (A2) {\scriptsize $\mathrm{A}_2$};
-	\node[anchor = south east, Blue, inner sep = 2pt] (AC24label) at (A3) {\scriptsize $\mathrm{A}_3$};
-	\node[anchor = south west, Blue, inner sep = 2pt] (AC21label) at (A4) {\scriptsize $\mathrm{A}_4$};
-	\node[anchor = north east, red] (AdashElabel) at ($(Adash1)+(0.11,0,0)$) {\scriptsize $\mathrm{A}'_1$};
-	\node[anchor = south west, inner sep = 2pt, red] (AdashC30label) at ($(Adash2)+(0.02,-0.03,0)$) {\scriptsize $\mathrm{A}'_2$};
-	\node[anchor = south east, inner sep = 3pt, red] (AdashCm30label) at (Adash3) {\scriptsize $\mathrm{A}'_3$};
-	\node[anchor = north west, red, inner sep = 1pt] (AdashC41label) at (Adash4) {\scriptsize $\mathrm{A}'_4$};
-	\node[anchor = east, inner sep = 4pt, red] (AdashC4130label) at (Adash5) {\scriptsize $\mathrm{A}'_5$};
-	\node[anchor = south west, inner sep = 2pt, red] (AdashC41m30label) at (Adash6) {\scriptsize $\mathrm{A}'_6$};
+%	\node[anchor = north east, Blue, inner sep = 0pt] (AElabel) at (A1) {\scriptsize $\mathrm{A}_1$};
+%	\node[anchor = north west, Blue] (AC21label) at (A2) {\scriptsize $\mathrm{A}_2$};
+%	\node[anchor = south east, Blue, inner sep = 2pt] (AC24label) at (A3) {\scriptsize $\mathrm{A}_3$};
+%	\node[anchor = south west, Blue, inner sep = 2pt] (AC21label) at (A4) {\scriptsize $\mathrm{A}_4$};
+%	\node[anchor = north east, red] (AdashElabel) at ($(Adash1)+(0.11,0,0)$) {\scriptsize $\mathrm{A}'_1$};
+%	\node[anchor = south west, inner sep = 2pt, red] (AdashC30label) at ($(Adash2)+(0.02,-0.03,0)$) {\scriptsize $\mathrm{A}'_2$};
+%	\node[anchor = south east, inner sep = 3pt, red] (AdashCm30label) at (Adash3) {\scriptsize $\mathrm{A}'_3$};
+%	\node[anchor = north west, red, inner sep = 1pt] (AdashC41label) at (Adash4) {\scriptsize $\mathrm{A}'_4$};
+%	\node[anchor = east, inner sep = 4pt, red] (AdashC4130label) at (Adash5) {\scriptsize $\mathrm{A}'_5$};
+%	\node[anchor = south west, inner sep = 2pt, red] (AdashC41m30label) at (Adash6) {\scriptsize $\mathrm{A}'_6$};
 \end{tikzpicture}

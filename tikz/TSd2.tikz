@@ -41,7 +41,7 @@
 		\node[anchor = east] (1G) at (axis cs:-0.1,20.84) {\scriptsize $\prescript{1}{}{G}_g$};
 		\node[anchor = south] (freeion) at (axis cs:0,41.6) {\scriptsize Free ion};
 		\draw[->, thin] (freeion) -- (axis cs:0,40.3);
-	},
+	}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	]
 	\foreach \term in {3T1g(F), 3T2g(F), 3A2g(F), 3T1g(P)}{
