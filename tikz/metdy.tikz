@@ -1,0 +1,71 @@
+% Metadynamics Simple Illustration
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 1,
+			horizontal sep = 2em,
+			xlabels at = edge bottom,
+			ylabels at = edge left,
+		},
+		%% Size %%%%%%%%%%%%%%%%%
+		width = .3\textwidth, height = .2\textwidth, no markers,
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Title format %%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Axis format %%%%%%%%%%
+		xlabel = {State distance, $d$},
+		ylabel = {Energy},
+		label style = {font = \footnotesize},
+		xmin = -5e-3, xmax = 15e-3,
+		ymin = -50, ymax = 55,
+		xtick = \empty,
+		scaled x ticks = false,
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Legend format %%%%%%%%
+		legend style = {font = \scriptsize, at = {(0.02,0.98)}, anchor = north west},
+		legend cell align = left,
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+		]
+		\nextgroupplot[
+			ytick = \empty,
+			legend entries={$E$, $V_{\mathrm{bias}}$},
+			after end axis/.code = {
+%				\node[text width = .05\textwidth, align = center, anchor = north] (fig:metady-a) at (rel axis cs: 0.5,-0.1) {\subcaption[a]{} \label{fig:metdy-a}};
+			},
+			]
+			\addplot[
+			Red,
+			domain=-5e-3:15e-3,
+			samples=201,
+			thick,
+			]
+			{-exp(-(x-(10e-3))^2 / (1.2e-3^2)) / (9e-3 * sqrt(2*pi))
+				-exp(-(x)^2 / (0.9e-3^2)) / (1.2e-2 * sqrt(2*pi))};
+			\addplot[
+			Blue,
+			dashed,
+			domain=-5e-3:15e-3,
+			samples=201,
+			thick,
+			]
+			{exp(-(x-(10e-3))^2 / (1.1e-3^2)) / (0.8e-2 * sqrt(2*pi))};
+			\draw[gray, thin] (current axis.left of origin) -- (current axis.right of origin);
+		\nextgroupplot[
+			ytick = \empty,
+			legend entries={$\tilde{E}$},
+			after end axis/.code = {
+%				\node[text width = .05\textwidth, align = center, anchor = north] (fig:metady-b) at (rel axis cs: 0.5,-0.1) {\subcaption[b]{} \label{fig:metdy-b}};
+			},	
+			]
+			\addplot[
+			Green!80!Black,
+			domain=-5e-3:15e-3,
+			samples=201,
+			thick,
+			]
+			{-exp(-(x-(10e-3))^2 / (1.2e-3^2)) / (9e-3 * sqrt(2*pi))
+				-exp(-(x)^2 / (0.9e-3^2)) / (1.2e-2 * sqrt(2*pi))
+				+exp(-(x-(10e-3))^2 / (1.1e-3^2)) / (0.8e-2 * sqrt(2*pi))};
+			\draw[gray, thin] (current axis.left of origin) -- (current axis.right of origin);
+	\end{groupplot}
+\end{tikzpicture}

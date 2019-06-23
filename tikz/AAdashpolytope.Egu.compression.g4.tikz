@@ -1,0 +1,112 @@
+\begin{tikzpicture}[
+	rotate around y=77, % free to adjust to rotate the Adash octahedron around its local "z" axis
+	rotate around z=-61.28203989, % -arctan(y/z) where y and z are the corresponding components of {(Adash6) - (Adash1)}
+	rotate around y=90,
+	rotate around x=90, % this and the next rotate TikZ's axes into our conventional view (z axis pointing upwards, x and y coming towards viewer)
+	scale = 5.0,
+	]
+%	\draw[->] (0,0,0)--++(1,0,0) node[right]{$x$};
+%	\draw[->] (0,0,0)--++(0,1,0) node[above]{$y$};
+%	\draw[->] (0,0,0)--++(0,0,1) node[below left]{$z$};
+	% A
+	%% Coord def
+	\coordinate (A1) at (0, 0, 0);
+	\coordinate (A2) at (1.2578410869, 0, 0);
+	\coordinate (A3) at (0.6289205435, 1.3088919933, 0);
+	\coordinate (A4) at (0.6289205435, 0.7045013299, 1.1031210841);	
+	% Adash
+	%% Coord def
+	\coordinate (Adash1) at (0.6289205435, -0.1739448336, -0.0953028955);
+	\coordinate (Adash2) at (1.1797172675,  0.7680052901, -0.2072660260);
+	\coordinate (Adash3) at (0.0781238195,  0.2386913715,  0.7588265680);
+	\coordinate (Adash4) at (1.1797172675,  0.2386913715,  0.7588265680);
+	\coordinate (Adash5) at (0.0781238195,  0.7680052901, -0.2072660260);
+	\coordinate (Adash6) at (0.6289205435,  1.1806414952,  0.6468634375);
+	%% Draw lines
+	% A2 -- Adash1
+	\draw[Green, thin, densely dotted] (A2) -- (Adash1);
+	% A2 -- Adash2
+	\draw[Green, thin, densely dotted] (A2) -- (Adash2);
+	% A2 -- Adash4
+	\draw[Green, thin, densely dotted] (A2) -- (Adash4);
+	% A3 -- Adash2
+	\draw[Green, thin, densely dotted] (A3) -- (Adash2);
+	% A3 -- Adash5
+	\draw[Green, thin, densely dotted] (A3) -- (Adash5);
+	% A3 -- Adash6
+	\draw[Green, thin, densely dotted] (A3) -- (Adash6);
+	% Adash4 -- Adash6
+	\draw[red, thick] (Adash4) -- ($(Adash4)!0.46!(Adash6)$);
+	\draw[red, thick, densely dashed] ($(Adash4)!0.46!(Adash6)$) -- ($(Adash4)!0.83!(Adash6)$);
+	\draw[red, thick] ($(Adash4)!0.83!(Adash6)$) -- (Adash6);
+	% Adash2 -- Adash6
+	\draw[red, thick, densely dashed] (Adash2) -- (Adash6);
+	% Adash2 -- Adash5
+	\draw[red, thick, densely dashed] (Adash2) -- (Adash5);
+	% Adash1 -- Adash2
+	\draw[red, thick, densely dashed] (Adash1) -- (Adash2);
+	% Adash1 -- Adash5
+	\draw[red, thick] (Adash1) -- ($(Adash1)!0.34!(Adash5)$);
+	\draw[red, thick, densely dashed] ($(Adash1)!0.34!(Adash5)$) -- ($(Adash1)!0.67!(Adash5)$);
+	\draw[red, thick] ($(Adash1)!0.67!(Adash5)$) -- (Adash5);
+	% Adash2 -- Adash4
+	\draw[red, thick, densely dashed] (Adash2) -- (Adash4);
+	% A2 -- A1
+	\draw[Blue, very thick] (A2) -- ($(A2)!0.35!(A1)$);
+	\draw[Blue, very thick, densely dashed] ($(A2)!0.35!(A1)$) -- ($(A2)!0.6!(A1)$);
+	\draw[Blue, very thick] ($(A2)!0.6!(A1)$) -- (A1);
+	% A1 -- A4
+	\draw[Blue, very thick] (A1) -- ($(A1)!0.3!(A4)$);
+	\draw[Blue, very thick, densely dashed] ($(A1)!0.3!(A4)$) -- ($(A1)!0.73!(A4)$);
+	\draw[Blue, very thick] ($(A1)!0.73!(A4)$) -- (A4);
+	% A2 -- A3
+	\draw[Blue, very thick, densely dashed] (A2) -- (A3);
+	% A3 -- A4
+	\draw[Blue, very thick, densely dashed] (A3) -- ($(A3)!0.6!(A4)$);
+	\draw[Blue, very thick] ($(A3)!0.6!(A4)$) -- (A4);
+	% A4 -- A2
+	\draw[Blue, very thick] (A4) -- ($(A4)!0.3!(A2)$);
+	\draw[Blue, very thick, densely dashed] ($(A4)!0.3!(A2)$) -- ($(A4)!0.71!(A2)$);
+	\draw[Blue, very thick] ($(A4)!0.71!(A2)$) -- (A2);
+	% A1 -- A3
+	\draw[Blue, very thick] (A1) -- ($(A1)!0.3!(A3)$);
+	\draw[Blue, very thick, densely dashed] ($(A1)!0.3!(A3)$) -- (A3);
+	% Adash1 -- Adash4
+	\draw[red, thick] (Adash1) -- (Adash4);
+	% Adash5 -- Adash6
+	\draw[red, thick] (Adash5) -- (Adash6);
+	% Adash5 -- Adash3
+	\draw[red, thick] (Adash5) -- (Adash3);
+	% Adash3 -- Adash6
+	\draw[red, thick] (Adash3) -- (Adash6);
+	% Adash4 -- Adash3
+	\draw[red, thick] (Adash4) -- (Adash3);
+	% Adash3 -- Adash1
+	\draw[red, thick] (Adash3) -- (Adash1);
+	% A1 -- Adash1
+	\draw[Green, thin, densely dotted] (A1) -- (Adash1);
+	% A1 -- Adash3
+	\draw[Green, thin, densely dotted] (A1) -- (Adash3);
+	% A1 -- Adash5
+	\draw[Green, thin, densely dotted] (A1) -- (Adash5);
+	% A4 -- Adash3
+	\draw[Green, thin, densely dotted] (A4) -- (Adash3);
+	% A4 -- Adash4
+	\draw[Green, thin, densely dotted] (A4) -- (Adash4);
+	% A4 -- Adash6
+	\draw[Green, thin, densely dotted] (A4) -- (Adash6);
+	%% Plot states
+	\foreach \astate in {A1, A2, A3, A4} \node at (\astate)[circle, fill = Blue, draw = black, inner sep=2pt]{};
+	\foreach \adashstate in {Adash1, Adash2, Adash3, Adash4, Adash5, Adash6} \node at (\adashstate)[circle, fill = red, draw = black, inner sep=2pt]{};
+	%% Label states
+	\node[anchor = south west, Blue, inner sep = 3pt] (A1label) at (A1) {\tiny $\mathrm{A}_{1,1}$};
+	\node[anchor = south east, Blue, inner sep = 3pt] (A2label) at (A2) {\tiny $\mathrm{A}_{1,2}$};
+	\node[anchor = north west, Blue, inner sep = 3pt] (A3label) at (A3) {\tiny $\mathrm{A}_{1,3}$};
+	\node[anchor = north east, Blue, inner sep = 2pt] (A4label) at (A4) {\tiny $\mathrm{A}_{1,4}$};
+	\node[anchor = south west, inner sep = 2pt, red] (Adash1label) at (Adash1) {\tiny $\mathrm{A}'_{1,1}$};
+	\node[anchor = south west, inner sep = 2pt, red] (Adash2label) at ($(Adash2)+(-0.03,0,0)$) {\tiny $\mathrm{A}'_{1,2}$};
+	\node[anchor = north west, inner sep = 0pt, red] (Adash3label) at (Adash3) {\tiny $\mathrm{A}'_{1,3}$};
+	\node[anchor = north east, red, inner sep = 2pt] (Adash4label) at (Adash4) {\tiny $\mathrm{A}'_{1,4}$};
+	\node[anchor = west, inner sep = 5pt, red] (Adash5label) at (Adash5) {\tiny $\mathrm{A}'_{1,5}$};
+	\node[anchor = north west, inner sep = 4pt, red] (Adash6label) at (Adash6) {\tiny $\mathrm{A}'_{1,6}$};
+\end{tikzpicture}

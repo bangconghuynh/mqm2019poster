@@ -1,0 +1,54 @@
+\pgfplotstableread{plots/TSdiag/TSd2.csv}\TSdtwo
+\begin{tikzpicture}[baseline]
+	\begin{axis}[
+	%% Size %%%%%%%%%%%%%%%%%%%%%
+	width = \textwidth,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Title format %%%%%%%%%%%%%
+	%			title = {\small{B3-LYP}},
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Axis format %%%%%%%%%%%%%%
+	axis equal image,
+	xmin = 0, xmax = 20,
+	ymin = 0, ymax = 40,
+	xtick = {0},
+	ytick = \empty,
+	xlabel = {Splitting parameter, $\Delta_\mathrm{o}$},
+	ylabel = {Energy},
+	label style = {font = \footnotesize},
+	tick label style = {font = \footnotesize},
+	y label style = {yshift = 1.5em},
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Plot format %%%%%%%%%%%%%%
+	cycle list name = coloronly,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Annotations %%%%%%%%%%%%%%
+	after end axis/.code = {
+		% Labelling
+		\node[anchor = west] (3T1gF) at (axis cs:20.1,0) {\scriptsize $\prescript{3}{}{T_{1g}}$};
+		\node[anchor = west] (3T2gF) at (axis cs:20.1,18.301) {\scriptsize $\prescript{3}{}{T_{2g}}$};
+		\node[anchor = west] (3A2gF) at (axis cs:20.1,38.0) {\scriptsize $\prescript{3}{}{A_{2g}}$};
+		\node[anchor = west] (1T2gD) at (axis cs:20.1,14.5) {\scriptsize $\prescript{1}{}{T_{2g}}$};
+		\node[anchor = west] (1EgD) at (axis cs:20.1,16.2) {\scriptsize $\prescript{1}{}{E_{g}}$};
+		\node[anchor = west] (3T1gP) at (axis cs:20.1,31.0) {\scriptsize $\prescript{3}{}{T_{1g}}$};
+		\node[anchor = west] (1T2gG) at (axis cs:20.1,35.749) {\scriptsize $\prescript{1}{}{T_{2g}}$};
+		\node[anchor = south] (1EgG) at (axis cs:12.19,40.1) {\scriptsize $\prescript{1}{}{E_{g}}$};
+		\node[anchor = west] (1T1gG) at (axis cs:20.1,39.6) {\scriptsize $\prescript{1}{}{T_{1g}}$};
+		\node[anchor = west] (1A1gG) at (axis cs:20.1,32.7) {\scriptsize $\prescript{1}{}{A_{1g}}$};
+		\node[anchor = east] (3F) at (axis cs:-0.1,0) {\scriptsize $\prescript{3}{}{F}_g$};
+		\node[anchor = east] (1D) at (axis cs:-0.1,13.50) {\scriptsize $\prescript{1}{}{D}_g$};
+		\node[anchor = east] (3P) at (axis cs:-0.1,15.30) {\scriptsize $\prescript{3}{}{P}_g$};
+		\node[anchor = east] (1G) at (axis cs:-0.1,20.84) {\scriptsize $\prescript{1}{}{G}_g$};
+		\node[anchor = south] (freeion) at (axis cs:0,41.6) {\scriptsize Free ion};
+		\draw[->, thin] (freeion) -- (axis cs:0,40.3);
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	]
+	\foreach \term in {3T1g(F), 3T2g(F), 3A2g(F), 3T1g(P)}{
+		\addplot+[thick, mark = none] table[x={delta/B}, y={\term}]{\TSdtwo};
+	}
+	\foreach \term in {1T2g(D), 1Eg(D), 1T2g(G), 1Eg(G), 1T1g(G), 1A1g(G), 1A1g(S)}{
+		\addplot+[thick, dashed, mark = none] table[x={delta/B}, y={\term}]{\TSdtwo};
+	}
+	\end{axis}
+\end{tikzpicture}

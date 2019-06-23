@@ -1,0 +1,3 @@
+./tikz/tikzoutput/d2_MS0_allnoci-output.pdf: plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.dos.csv
+./tikz/tikzoutput/d2_MS0_allnoci-output.pdf: plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.allnocitriplet.dos.csv
+./tikz/tikzoutput/d2_MS0_allnoci-output.pdf: plots/MS0/VF63-.0.1.9896.UHF.6-31GSTAR.allnocisinglet.dos.csv

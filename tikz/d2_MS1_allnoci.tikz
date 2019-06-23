@@ -1,0 +1,157 @@
+\begin{tikzpicture}[%
+	baseline,%
+%	trim axis left,%
+%	trim axis right,%
+]
+	\begin{axis}[
+		%% General %%%%%%%%%%%%%%%%%%
+		height = 25cm,
+		width = 6.0cm,
+		xcomb,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Title format %%%%%%%%%%%%%
+		align = center,
+		title = {$M_S = 1$},
+		title style = {yshift = -.5ex, font = {\small}},
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Axis format %%%%%%%%%%%%%%
+		% Axis scales
+		scaled x ticks = false,
+		xmin = 0, xmax = 6,
+		ymin = -1539.351, ymax = -1539.199,
+		restrict y to domain=-1539.351:-1539.199,
+		% Axis labels
+		xlabel = {Spatial degeneracy},
+		ylabel = {Energy / $\si{\hartree}$},
+		label style = {font = \small},
+		tick label style = {font = \small},
+%		xticklabels={,,},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision=2,
+			/tikz/.cd
+		},
+		% Axis ticks
+		xtick pos = left,
+		xtick align = outside,
+		ytick align = outside,
+		ytick pos = left,
+		ytick distance = 0.02,
+		minor x tick num = 1,
+		minor y tick num = 1,
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Legend format %%%%%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% Annotations %%%%%%%%%%%%%%
+		after end axis/.code = {
+			%%
+			%% UHF
+			% A
+			\node[draw, Gray!60!Black, densely dotted, anchor = west, inner sep = 3pt] (A) at (axis cs:7,-1539.345) {\scriptsize $\mathrm{A}_1$};
+			\draw[Gray!60!Black, densely dotted, thin] (axis cs:4.1,-1539.3424268) -- (A);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Asym) at ($(A.west) + (1.7cm,0)$) {\scriptsize $T_{1g} \oplus A_{2g}$};
+			\draw[->, Gray!60!Black, densely dotted, thin] (A) -- (Asym);
+			% Adash
+			\node[draw, Gray!60!Black, densely dotted, anchor = west, inner sep = 3pt] (Adash) at (axis cs:7,-1539.335) {\scriptsize $\mathrm{A}'_1$};
+			\draw[Gray!60!Black, densely dotted, thin] (axis cs:6.1,-1539.3416345) -- (Adash);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Adashsym) at ($(Adash.west) + (1.7cm,0)$) {\scriptsize $T_{1g} \oplus T_{2g}$};
+			\draw[->, Gray!60!Black, densely dotted, thin] (Adash) -- (Adashsym);
+			% B
+			\node[draw, Gray!60!Black, anchor = west, inner sep = 3pt] (B) at (axis cs:7,-1539.32) {\scriptsize $\mathrm{B}_1$};
+			\draw[Gray!60!Black, thin] (axis cs:3.1,-1539.3360346) -- (B);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Bsym) at ($(B.west) + (1.7cm,0)$) {\scriptsize $T_{1g}$};
+			\draw[->, Gray!60!Black, thin] (B) -- (Bsym);
+			% C
+			\node[draw, Gray!60!Black, anchor = west, inner sep = 3pt] (C) at (axis cs:7,-1539.28) {\scriptsize $\mathrm{C}_1$};
+			\draw[Gray!60!Black, thin] (axis cs:3.1,-1539.2883111) -- (C);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Csym) at ($(C.west) + (1.7cm,0)$) {\scriptsize $T_{2g}$};
+			\draw[->, Gray!60!Black, thin] (C) -- (Csym);
+			% D
+			\node[draw, Gray!60!Black, densely dotted, anchor = west, inner sep = 3pt] (D) at (axis cs:7,-1539.27) {\scriptsize $\mathrm{D}_1$};
+			\draw[Gray!60!Black, densely dotted, thin] (axis cs:6.1,-1539.2750572) -- (D);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Dsym) at ($(D.west) + (1.7cm,0)$) {\scriptsize $T_{1g} \oplus T_{2g}$};
+			\draw[->, Gray!60!Black, densely dotted, thin] (D) -- (Dsym);
+			% E
+			\node[draw, Gray!60!Black, anchor = west, inner sep = 3pt] (E) at (axis cs:7,-1539.238) {\scriptsize $\mathrm{E}_1$};
+			\draw[Gray!60!Black, thin] (axis cs:3.1,-1539.2354939) -- (E);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Esym) at ($(E.west) + (1.7cm,0)$) {\scriptsize $T_{1g}$};
+			\draw[->, Gray!60!Black, thin] (E) -- (Esym);
+			% F
+			\node[draw, Gray!60!Black, anchor = west, inner sep = 3pt] (F) at (axis cs:7,-1539.231) {\scriptsize $\mathrm{F}_1$};
+			\draw[Gray!60!Black, thin] (axis cs:1.1,-1539.2277383) -- (F);
+			\node[Gray!60!Black, anchor = west, inner sep = 3pt] (Fsym) at ($(F.west) + (1.7cm,0)$) {\scriptsize $A_{2g}$};
+			\draw[->, Gray!60!Black, thin] (F) -- (Fsym);
+			%%
+			%% UHF orbitals
+			% A orbitals
+			\node[draw, red, very thick, fill = white, densely dotted, thick, anchor = west, inner sep=2pt] (Aorb) at (axis cs:16,-1539.355) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/A_o161_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/A_o161_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Asym.east)$) .. controls ($(Asym.east) + (1cm,0cm)$) and ($(Aorb.west) + (-1cm,0cm)$) .. (Aorb);
+			\node[anchor = west] (AS2) at ($(Aorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0040$};
+			% Adash orbitals
+			\node[draw, red, very thick, fill = white, densely dotted, thick, anchor = west, inner sep=2pt] (Adashorb) at (axis cs:16,-1539.336) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/Adash_o185_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/Adash_o185_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Adashsym.east)$) .. controls ($(Adashsym.east) + (1cm,0cm)$) and ($(Adashorb.west) + (-1cm,0cm)$) .. (Adashorb);
+			\node[anchor = west] (AdashS2) at ($(Adashorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0040$};
+			% B orbitals
+			\node[draw, Gray!60!Black, thick, fill = white, anchor = west, inner sep=2pt] (Borb) at (axis cs:16,-1539.309) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/B_o53_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/B_o53_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Bsym.east)$) .. controls ($(Bsym.east) + (1cm,0cm)$) and ($(Borb.west) + (-1cm,0cm)$) .. (Borb);
+			\node[anchor = west] (BS2) at ($(Borb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0045$};
+			% C orbitals
+			\node[draw, Gray!60!Black, thick, fill = white, anchor = west, inner sep=2pt] (Corb) at (axis cs:16,-1539.282) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/C_o13_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/C_o13_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Csym.east)$) .. controls ($(Csym.east) + (1cm,0cm)$) and ($(Corb.west) + (-1cm,0cm)$) .. (Corb);
+			\node[anchor = west] (CS2) at ($(Corb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0035$};
+			% D orbitals
+			\node[draw, red, very thick, fill = white, densely dotted, thick, anchor = west, inner sep=2pt] (Dorb) at (axis cs:16,-1539.261) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/D_o209_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/D_o209_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm, densely dotted] ($(Dsym.east)$) .. controls ($(Dsym.east) + (1cm,0cm)$) and ($(Dorb.west) + (-1cm,0cm)$) .. (Dorb);
+			\node[anchor = west] (DS2) at ($(Dorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0039$};
+			% E orbitals
+			\node[draw, Gray!60!Black, thick, fill = white, anchor = west, inner sep=2pt] (Eorb) at (axis cs:16,-1539.237) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/E_o217_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/E_o217_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Esym.east)$) .. controls ($(Esym.east) + (1cm,0cm)$) and ($(Eorb.west) + (-1cm,0cm)$) .. (Eorb);
+			\node[anchor = west] (ES2) at ($(Eorb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0049$};
+			% F orbitals
+			\node[draw, Gray!60!Black, thick, fill = white, anchor = west, inner sep=2pt] (Forb) at (axis cs:16,-1539.216) {\includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/F_o65_40_1200ppi} \  \includegraphics[width=.05\textwidth, trim=3 3 3 3, clip]{images/MS1/F_o65_41_1200ppi}};
+			\draw[->, Gray!60!Black, shorten >=0.1cm] ($(Fsym.east)$) .. controls ($(Fsym.east) + (1cm,0cm)$) and ($(Forb.west) + (-1cm,0cm)$) .. (Forb);
+			\node[anchor = west] (FS2) at ($(Forb.east) + (0.7cm,0cm)$) {\scriptsize $\langle \hat{S}^2 \rangle \approx 2.0044$};
+			%%
+			%% NOCI
+			% T1g[A,Adash,B]
+			\node[anchor = west, inner sep = 3pt] (T1gAAdashB) at (axis cs:7,-1539.356) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{A}_1, \mathrm{A}'_1, \mathrm{B}_1]$};
+			% T1g(A)
+			\draw[thin, ->] (axis cs:3.1,-1539.3435881) -- ($(T1gAAdashB.north west)$);
+			% T1g(A+B)
+			\draw[thin, ->] (axis cs:3.1,-1539.3439815) -- ($(T1gAAdashB.north west)$);
+			% T1g(Adash)
+			\draw[thin, ->] (axis cs:3.1,-1539.3442214) -- ($(T1gAAdashB.north west)$);
+			% T1g(Adash+B)
+			\draw[thin, ->] (axis cs:3.1,-1539.3442249) -- ($(T1gAAdashB.north west)$);
+			% T1g(A+Adash)
+			\draw[thin, ->] (axis cs:3.1,-1539.3442685) -- ($(T1gAAdashB.north west)$);
+			% T1g(A+Adash+B)
+			\draw[thin, ->] (axis cs:3.1,-1539.3443200) -- ($(T1gAAdashB.north west)$);
+			% T2g[C,D]
+			\node[anchor = west, inner sep = 3pt] (T2gCD) at (axis cs:7,-1539.296) {\scriptsize $\prescript{3}{}{T}_{2g}[\mathrm{C}_1, \mathrm{D}_1]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2914711) -- (T2gCD);
+			\draw[thin, ->] (axis cs:3.1,-1539.2912895) -- (T2gCD);
+			% T1g(D)
+			\node[anchor = west, inner sep = 3pt] (T1gD) at (axis cs:7,-1539.218) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{D}_1]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2265782) -- (T1gD);
+			% T1g(D+E)
+			\node[anchor = west, inner sep = 3pt] (T1gDE) at (axis cs:7,-1539.247) {\scriptsize $\prescript{3}{}{T}_{1g}[\mathrm{D}_1 \oplus \mathrm{E}_1]$};
+			\draw[thin, ->] (axis cs:3.1,-1539.2375246) -- ($(T1gDE.north west)$);
+		}
+	]
+		\addplot+[
+			mark = none,
+			red,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{plots/MS1/VF63-.+1.1.9896.UHF.6-31GSTAR.dos.csv};
+		\addplot+[
+			mark = none,
+			DarkCyan,
+			thin
+		]
+			table[x={DoS}, y={E}, col sep=comma]{plots/MS1/VF63-.+1.1.9896.UHF.6-31GSTAR.allnoci.dos.csv};
+	\end{axis}
+\end{tikzpicture}
