@@ -53,8 +53,8 @@
 	\draw[red, thick, densely dashed] (Adash2) -- (Adash4);
 	% A2 -- A1
 	\draw[Blue, very thick] (A2) -- ($(A2)!0.23!(A1)$);
-	\draw[Blue, very thick, densely dashed] ($(A2)!0.23!(A1)$) -- ($(A2)!0.8!(A1)$);
-	\draw[Blue, very thick] ($(A2)!0.8!(A1)$) -- (A1);
+	\draw[Blue, very thick, densely dashed] ($(A2)!0.23!(A1)$) -- ($(A2)!0.72!(A1)$);
+	\draw[Blue, very thick] ($(A2)!0.72!(A1)$) -- (A1);
 	% A1 -- A4
 	\draw[Blue, very thick] (A1) -- ($(A1)!0.35!(A4)$);
 	\draw[Blue, very thick, densely dashed] ($(A1)!0.35!(A4)$) -- ($(A1)!0.70!(A4)$);

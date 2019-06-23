@@ -13,7 +13,7 @@
 
 \usepackage{lmodern}
 
-\usepackage[orientation=portrait, size=a0, scale=1.2]{beamerposter}
+\usepackage[orientation=portrait, size=a0, scale=1.1]{beamerposter}
 
 \usetheme{BCHCambridge}
 
@@ -214,9 +214,9 @@
 					\label{fig:corrTSd2}
 				\end{figure}
 				
-			The \textbf{\color{Blue} non-linear} HF equations for these complexes therefore admit \textbf{\color{Blue} multiple low-lying solutions} that are \textbf{\color{Blue} degenerate} or \textbf{\color{Blue} nearly degenerate}.
+			The non-linear HF equations for these complexes therefore admit \textbf{\color{Blue} multiple low-lying solutions} that are \textbf{\color{Blue} degenerate} or \textbf{\color{Blue} nearly degenerate}.
 			
-			We have located these solutions using \textbf{\color{red} SCF metadynamics} and investigated their \textbf{\color{red} symmetry properties} in a model octahedral $d^2$ system, \ce{[VF6]^{3-}} (\cref{fig:d2_allnoci}).
+			We have located these solutions using \textbf{\color{Blue} SCF metadynamics} and investigated their \textbf{\color{red} symmetry properties} in a model octahedral $d^2$ system, \ce{[VF6]^{3-}} (\cref{fig:d2_allnoci}).
 	  	\end{block}
 	
 		\begin{alertblock}{Symmetry Breaking in HF}
@@ -230,39 +230,34 @@
 						w = 1, 2, \ldots %
 					\right\rbrace%
 				$ %
-			and a group $\mathcal{G}$:
+			and a particular group $\mathcal{G}$:
 				\begin{itemize}
 					\item if $\mathrm{S}$ spans a \textbf{\color{Blue} single irrep} in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-conserved} in $\mathcal{G}$;
 					\item if $\mathrm{S}$ spans \textbf{\color{Blue} multiple
 					irreps} in $\mathcal{G}$, then $\mathrm{S}$ is \textbf{\color{red} symmetry-broken} in $\mathcal{G}$.
 				\end{itemize}
 
-			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. \textbf{\color{Blue} Restoring symmetry} of symmetry-broken HF solutions allows us to form \textbf{\color{Blue} physically meaningful wavefunctions} while \textbf{\color{Blue} incorporating said correlation}.
+			HF solutions break symmetry to become lower in energy and possibly recover some electron correlation. \textbf{\color{Blue} Restoring symmetry} of symmetry-broken HF solutions allows us to form \textbf{\color{red} physically meaningful wavefunctions} while \textbf{\color{red} incorporating said correlation}.
 		\end{alertblock}
 	
-  		\begin{block}{References}
-			
-			\AtNextBibliography{\footnotesize}
-			\nocite{*}
-			\printbibliography[title=none]
-			
-		\end{block}
-	
-	\end{column}
-	
-	\separatorcolumn
-	
-	\begin{column}{\colwidth}
-	
-		\begin{block}{Non-Orthogonal Configuration Interaction (NOCI)}
-			For a symmetry-broken set $\mathrm{S}$, solving the \textbf{\color{Blue} generalised eigenvalue equation}
+		\begin{block}{Restoring Symmetry: Non-Orthogonal CI (NOCI)}
+			For a complete symmetry-broken set %
+				$\mathrm{S} =
+					\left\lbrace
+						\prescript{w}{}{\Psi} %
+						\ | \ %
+						w = 1, 2, \ldots %
+					\right\rbrace%
+				$, %
+			solving the generalised eigenvalue equation
 				\begin{equation*}
 					\boldsymbol{HA} = \boldsymbol{SAE} \quad %
 					\textsf{where} \quad %
-					\left(\boldsymbol{H}\right)_{wx} =
-					\braket{\prescript{w}{}{\Psi}|\hat{\mathscr{H}}|\prescript{x}{}{\Psi}} \  %
+					\left(\boldsymbol{H}\right)_{wx} = %
+						\braket{\prescript{w}{}{\Psi}|\hat{\mathscr{H}}|\prescript{x}{}{\Psi}} \  %
 					\textsf{and} \  %
-					\left(\boldsymbol{S}\right)_{wx} = \braket{\prescript{w}{}{\Psi}|\prescript{x}{}{\Psi}} %
+					\left(\boldsymbol{S}\right)_{wx} = %
+						\braket{\prescript{w}{}{\Psi}|\prescript{x}{}{\Psi}} %
 				\end{equation*}
 			gives coefficients $A_{wm}$ such that the \textbf{\color{Blue} NOCI wavefunctions}
 				\begin{equation*}
@@ -271,11 +266,17 @@
 			\textbf{\color{red} conserve symmetry} and can be used to approximate corresponding electronic terms.
 		\end{block}
 	
+	\end{column}
+	
+	\separatorcolumn
+	
+	\begin{column}{\colwidth}
+	
 		\begin{block}{UHF vs. NOCI: Jahn--Teller Distortion}
 			Consider the $T_{1g} \otimes e_g$ Jahn--Teller distortion in octaheral \ce{[VF6]^{3-}}. \Cref{fig:JT} shows that:
 				\begin{itemize}
 					\item the UHF $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions fail to exhibit the expected energy minima;
-					\item the $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ \textbf{\color{Blue} NOCI wavefunctions} do \textbf{\color{Red} show the expected stabilisation} and give the \textbf{\color{Red} correct degeneracy splitting}.
+					\item the $\prescript{3}{}{T}_{1g}[\mathrm{A}_1 \oplus \mathrm{A}'_1]$ \textbf{\color{Blue} NOCI wavefunctions} do \textbf{\color{Red} show the expected stabilisation} and give the \textbf{\color{Red} correct degeneracy splitting} upon symmetry descent.
 				\end{itemize}
 			
 			
@@ -293,7 +294,7 @@
 		
 		\begin{block}{Solution Topology: Euclidean Realisation of State Distances}
 			% Interpreting state distances as Euclidean distances, 
-			By realising the distance matrices between symmetry-broken HF solutions as \textbf{\color{Blue} polytopes} showing their \textbf{\color{Blue} arrangements in Euclidean space} (\cref{fig:AAdashpolytopes}), we hope to gain insight into the nature of their symmetry breaking.
+			By realising the distance matrices between symmetry-broken HF solutions to give \textbf{\color{Blue} polytopes} showing their \textbf{\color{red} arrangements in Euclidean space} (\cref{fig:AAdashpolytopes}), we hope to gain insight into the nature of their symmetry breaking.
 			
 			\begin{figure}
 				\begin{subfigure}[b]{0.3\textwidth}
@@ -316,6 +317,23 @@
 				\caption{Three-dimensional projections of polytopes of $\mathrm{A}_1$ and $\mathrm{A}'_1$ solutions along the $e_{g}u$ distortion.}
 				\label{fig:AAdashpolytopes}
 			\end{figure}
+		\end{block}
+	
+		\begin{alertblock}{In a Nutshell}
+			\begin{itemize}
+				\item There exist \textbf{\color{DarkGreen} many low-lying HF solutions} in transition-metal complexes.
+				\item Some solutions \textbf{\color{DarkGreen} break symmetry}, spin or spatial or both.
+				\item NOCI can \textbf{\color{DarkGreen} restore symmetry} to give \textbf{\color{DarkGreen} proper physical behaviours}, \textit{e.g.}, vibronic coupling.
+				\item There are \textbf{\color{DarkGreen} clear patterns} in symmetry breaking that need further understanding.
+			\end{itemize}
+		\end{alertblock}
+	
+		\begin{block}{References}
+			
+			\AtNextBibliography{\footnotesize}
+			\nocite{*}
+			\printbibliography[title=none]
+			
 		\end{block}
 	
 	\end{column}
