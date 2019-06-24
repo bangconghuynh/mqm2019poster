@@ -89,7 +89,7 @@
 			\draw[->, Gray!60!Black!60!Black, thin, densely dotted] (C) -- (Csym);
 			% D
 			\node[draw, Gray!60!Black!60!Black, densely dotted, anchor = west, inner sep = 3pt] (D) at (axis cs:7,-1539.24) {\scriptsize $\mathrm{D}_0$};
-			\draw[Gray!60!Black!60!Black, densely dotted, thin] (axis cs:6.1,-1539.2440258) -- (D);
+			\draw[Gray!60!Black!60!Black, densely dotted, thin] (axis cs:3.1,-1539.2440258) -- (D);
 			\node[Gray!60!Black!60!Black, anchor = west, inner sep = 3pt] (Dsym) at ($(D.west) + (1.7cm,0)$) {\scriptsize $A_{1g} \oplus E_g$};
 			\draw[->, Gray!60!Black!60!Black, thin, densely dotted] (D) -- (Dsym);
 			% E
